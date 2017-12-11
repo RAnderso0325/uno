@@ -24,5 +24,20 @@ function drawTwo(){
 }
 
 //wild card logic
+function wildCard(){
+	//player chooses color
+	//show input box for color choice, maybe radio buttons
+	//change color variable to the proper color choice
+	//^using user input
+	turn++;
+	playerTurnIs();
+}
 
 //wild card draw four logic
+function wildCardDrawFour(){
+	drawCard();
+	drawCard();
+	drawCard();
+	drawCard();
+	wildCard();
+}
