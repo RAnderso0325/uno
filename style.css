@@ -1,6 +1,5 @@
 body{
 	text-align: center;
-	color: white;
 }
 h1{
 	color: blue;
@@ -8,20 +7,12 @@ h1{
 h2{
 	color: blue;
 }
-.hand{}
-.discard{
+.card, .discard{
 	display: inline-block;
 	border: 1px solid black;
 	height: 150px;
 	width: 100px;
 	margin: 5px;
 	overflow: auto;
-}
-.card{
-	display: inline-block;
-	border: 1px solid black;
-	height: 150px;
-	width: 100px;
-	margin: 5px;
-	overflow: auto;
+	color: white;
 }

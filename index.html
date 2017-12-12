@@ -6,10 +6,25 @@
 </head>
 <body>
 	<h1>UNO</h1>
+	<div id="creategamemodal" style="display:none;">
+		<h1>Number of Players</h1>
+		<form id="form1">
+			<input type="radio" name="player-option" value="option0" required="required">One
+			<input type="radio" name="player-option" value="option1" required="required">Two
+			<input type="radio" name="player-option" value="option2" required="required">Three
+			<input type="radio" name="player-option" value="option3" required="required">Four<br>
+			<input type="button" value="Add Players">
+		</form>
+		<form id="form2">
+			<input type="text" value="" placeholder="Player Name">
+			<input type="button" value="Start Game!">
+		</form>
+	</div>
 	<div id="game-board">
 	</div>
 	<button type="add" id="draw-card">Draw Card</button>
 	<button type="reset" id="new-game">New Game</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="./js/cards.js"></script>
 <script type="text/javascript" src="./js/card-logic.js"></script>
 <script type="text/javascript" src="./js/player.js"></script>
