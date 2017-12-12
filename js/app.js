@@ -2,10 +2,6 @@ var turn = 0; //current index
 var shuffledDeck;
 var reverse = false;
 
-//to have multiple players
-//have to have a player array, boolean reversing or not
-// if reverse is false, going forward, if reverse is false go backwards in the player array
-
 //set game board
 function setGameBoard(){
 	console.log("game board is ready");
@@ -24,7 +20,7 @@ function setGameBoard(){
 //shuffle function
 function shuffleDeck(){
 	var currentIndex = deck.length, temporaryValue, randomIndex;
-	while(0 !== currentIndex){
+	while(0 < currentIndex){
 		randomIndex = Math.floor(Math.random()*currentIndex);
 		currentIndex -= 1;
 		temporaryValue = deck[currentIndex];
@@ -41,9 +37,6 @@ function dealCards(){
     	playerArr[i].playerHand = shuffledDeck.splice(0,7);
     }
 }
-
-//shuffle deck, ie randomly add seven cards from the deck to player 1 hand
-//display cards for player 1
 
 //add a card to the discard pile
 

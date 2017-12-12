@@ -9,7 +9,12 @@ function skipCard(){
 //reverse logic
 function reverseCard(){
 	//if card played is skip card,
-	turn--;
+	if(reverse === false){
+		reverse = true;
+	}
+	if(reverse === true){
+		reverse = false;
+	};
 	console.log("reverse card was played");
 	playerTurnIs();
 
