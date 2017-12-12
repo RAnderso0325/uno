@@ -100,19 +100,19 @@ var deck = [
 	value: "plusTwo",
 },
 {
-	color: "red",
+	color: "purple",
 	value: "wildCard",
 },
 {
-	color: "red",
+	color: "purple",
 	value: "wildCard",
 },
 {
-	color: "red",
+	color: "pink",
 	value: "wildCardDrawFour",
 },
 {
-	color: "red",
+	color: "pink",
 	value: "wildCardDrawFour",
 },
 {
@@ -216,19 +216,19 @@ var deck = [
 	value: "plusTwo",
 },
 {
-	color: "yellow",
+	color: "purple",
 	value: "wildCard",
 },
 {
-	color: "yellow",
+	color: "purple",
 	value: "wildCard",
 },
 {
-	color: "yellow",
+	color: "pink",
 	value: "wildCardDrawFour",
 },
 {
-	color: "yellow",
+	color: "pink",
 	value: "wildCardDrawFour",
 },
 {
@@ -332,19 +332,19 @@ var deck = [
 	value: "plusTwo",
 },
 {
-	color: "green",
+	color: "purple",
 	value: "wildCard",
 },
 {
-	color: "green",
+	color: "purple",
 	value: "wildCard",
 },
 {
-	color: "green",
+	color: "pink",
 	value: "wildCardDrawFour",
 },
 {
-	color: "green",
+	color: "pink",
 	value: "wildCardDrawFour",
 },
 {
@@ -448,19 +448,19 @@ var deck = [
 	value: "plusTwo",
 },
 {
-	color: "blue",
+	color: "purple",
 	value: "wildCard",
 },
 {
-	color: "blue",
+	color: "purple",
 	value: "wildCard",
 },
 {
-	color: "blue",
+	color: "pink",
 	value: "wildCardDrawFour",
 },
 {
-	color: "blue",
+	color: "pink",
 	value: "wildCardDrawFour",
 }
 ]

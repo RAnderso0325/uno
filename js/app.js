@@ -1,18 +1,11 @@
 var turn = 0; //current index
 var shuffledDeck;
 var reverse = false;
+var discardPile = [];
 
 //set game board
 function setGameBoard(){
 	console.log("game board is ready");
-	// for (var i=0; i < playerHand.length; i++) {
-	// 	var cardElement = document.getElementsByClassName('card');
-		// cardElement.setAttribute('src', 'images/back.png');
-		// cardElement.setAttribute('data-id', i);
-		// cardElement.style.backgroundColor = "red";
-		// cardElement.addEventListener('click', playCard);
-		// document.getElementById('game-board').appendChild(cardElement);
-	// }
 	shuffleDeck();
 	dealCards();
 }
@@ -35,12 +28,46 @@ function dealCards(){
 	console.log("player hand dealt");
     for(var i=0; i<playerArr.length; i++){
     	playerArr[i].playerHand = shuffledDeck.splice(0,7);
+    	var hand = document.createElement('div');
+    	hand.setAttribute('class', 'hand');
+    	hand.setAttribute('id', 'player'+i);
+    	document.getElementById('game-board').appendChild(hand);
+    	// playerHand();
     }
+    discardPile = shuffledDeck.splice(0,1);
+    createDiscardPile();
+    addPlayerHand();
 }
 
-//add a card to the discard pile
+//add player hand to game board
+function addPlayerHand(){
+	for(var i=0; i<playerArr.length; i++){
+		var playerHand = playerArr[i].playerHand;
+		for(var j=0; j<playerHand.length; j++){
+			var card = document.createElement('div');
+			console.log(playerHand[j].color);
+			card.setAttribute('class', 'card');
+			card.classList.add(playerHand[j].color);
+			card.classList.add(playerHand[j].value);
+			card.textContent=playerHand[j].value;
+			card.style.backgroundColor = playerHand[j].color;
+			document.getElementById('player'+i).appendChild(card);
+		}
+		console.log("I am trying to add cards");
+	}
+	console.log("tryin to add");
+}
 
 //GAME PLAY:
+function createDiscardPile(){
+	var discardCard = document.createElement('div');
+	discardCard.setAttribute('class', 'card');
+	discardCard.classList.add(discardPile[0].color);
+	discardCard.classList.add(discardPile[0].value);
+	discardCard.textContent=discardPile[0].value;
+	discardCard.style.backgroundColor = discardPile[0].color;
+	document.getElementById('game-board').appendChild(discardCard);
+}
 
 function playerTurnIs(){
 	if(reverse === false){
