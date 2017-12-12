@@ -8,7 +8,6 @@ function skipCard(){
 
 //reverse logic
 function reverseCard(){
-	//if card played is skip card,
 	if(reverse === false){
 		reverse = true;
 	}

@@ -27,6 +27,9 @@ function shuffleDeck(){
 function dealCards(){
 	console.log("player hand dealt");
     for(var i=0; i<playerArr.length; i++){
+    	var playerInPlay = document.createElement('h2');
+    	playerInPlay.textContent = "Player "+(i+1);
+    	document.getElementById('game-board').appendChild(playerInPlay);
     	playerArr[i].playerHand = shuffledDeck.splice(0,7);
     	var hand = document.createElement('div');
     	hand.setAttribute('class', 'hand');
@@ -53,13 +56,14 @@ function addPlayerHand(){
 			card.style.backgroundColor = playerHand[j].color;
 			document.getElementById('player'+i).appendChild(card);
 		}
-		console.log("I am trying to add cards");
 	}
-	console.log("tryin to add");
 }
 
 //GAME PLAY:
 function createDiscardPile(){
+	var discardPileTitle = document.createElement('h2');
+	discardPileTitle.textContent = "Discard Pile";
+	document.getElementById('game-board').appendChild(discardPileTitle);
 	var discardCard = document.createElement('div');
 	discardCard.setAttribute('class', 'card');
 	discardCard.classList.add(discardPile[0].color);
