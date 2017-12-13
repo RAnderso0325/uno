@@ -115,6 +115,15 @@ function playCard(){
 		discardCard.style.backgroundColor = cardPlayed[0].color;
 		addPlayerHand();
 		playerTurnIs();
+		if(cardPlayed[0].value === "skip" && cardPlayed[0].color === discardPile[0].color){
+			skipCard();
+		}else if(cardPlayed[0].value === "reverse" && cardPlayed[0].color === discardPile[0].color){
+			reverseCard();
+		};
+	}else if(cardPlayed[0].value === "wildCard"){
+		playWildCard();
+	}else if(cardPlayed[0].value === "wildCardDrawFour"){
+		playWildCardDrawFour();
 	}else{
 		console.log("try again");
 	}

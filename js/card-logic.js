@@ -27,20 +27,21 @@ function drawTwo(){
 }
 
 //wild card logic
-function wildCard(){
+function playWildCard(){
 	//player chooses color
 	//show input box for color choice, maybe radio buttons
 	//change color variable to the proper color choice
 	//^using user input
-	turn++;
+	console.log("user played a wild card");
 	playerTurnIs();
 }
 
 //wild card draw four logic
-function wildCardDrawFour(){
+function playWildCardDrawFour(){
 	drawCard();
 	drawCard();
 	drawCard();
 	drawCard();
-	wildCard();
+	playWildCard();
+	console.log("user played a wild card draw four");
 }
