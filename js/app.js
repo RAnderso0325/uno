@@ -106,19 +106,20 @@ function playCard(){
 	var cardPlayed = playerArr[turn].playerHand.splice($(this).index(), 1);
 	if(cardPlayed[0].color === discardPile[0].color || cardPlayed[0].value === discardPile[0].value){
 		console.log('card spliced', cardPlayed[0].color);
-		discardPile.unshift(cardPlayed[0]);
-		var discardCard = document.getElementById('discardCard');
-		discardCard.setAttribute('class', 'card');
-		discardCard.classList.add(cardPlayed[0].color);
-		discardCard.classList.add(cardPlayed[0].value);
-		discardCard.textContent= cardPlayed[0].value;
-		discardCard.style.backgroundColor = cardPlayed[0].color;
-		addPlayerHand();
-		playerTurnIs();
 		if(cardPlayed[0].value === "skip" && cardPlayed[0].color === discardPile[0].color){
 			skipCard();
 		}else if(cardPlayed[0].value === "reverse" && cardPlayed[0].color === discardPile[0].color){
 			reverseCard();
+		}else{
+			discardPile.unshift(cardPlayed[0]);
+			var discardCard = document.getElementById('discardCard');
+			discardCard.setAttribute('class', 'card');
+			discardCard.classList.add(discardPile[0].color);
+			discardCard.classList.add(discardPile[0].value);
+			discardCard.textContent= discardPile[0].value;
+			discardCard.style.backgroundColor = discardPile[0].color;
+			addPlayerHand();
+			playerTurnIs();
 		};
 	}else if(cardPlayed[0].value === "wildCard"){
 		playWildCard();
@@ -127,39 +128,43 @@ function playCard(){
 	}else{
 		console.log("try again");
 	}
-	
+}
 	//check if card value or color equals that of the one in discardPile[0]
 	// if(this.value === discardPile[0].value || this.color === discardPile.color){
 	// 	discardPile.unshift(this);
-	
-
 	//Rerender player who just played
 	//playerArr[turn].playerHand
 	// addPlayerHand();
-
 	//console.log(discardCard);
 	//discardCard.style.backgroundColor = discardPile[0].color;
 	// discardCard.classList.add()
 	// 	console.log("this is working");
 	// }
 	//if it is not equal then prompt the user to play a card or draw a card
-
 	//if it is equal...
-
 	//push card into discard array
-
 	//pop card from playerHand array
-
 	//make the style display none again
-
 	// playerTurnIs();
-}
 
 
 //draw logic
 //include draw card button
 function drawCard(){
 	console.log("player would like to draw a card");
+	var drawnCard = shuffledDeck.splice(0,1);
+	playerArr[turn].playerHand.push(drawnCard[0]);
+	console.log(playerArr[turn]);
+	console.log(turn);
+	console.log(playerArr[turn].playerHand);
+	var card = document.createElement('div');
+	card.setAttribute('class', 'card');
+	card.classList.add(drawnCard[0].color);
+	card.classList.add(drawnCard[0].value);
+	card.textContent=drawnCard[0].value;
+	card.style.backgroundColor = drawnCard[0].color;
+	card.addEventListener('click', playCard);
+	$('#hand'+turn).append(card);
 	//add card to player hand
 }
 

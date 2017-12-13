@@ -20,10 +20,10 @@ function reverseCard(){
 
 //draw two logic
 function drawTwo(){
+	playerTurnIs();
 	drawCard();
 	drawCard();
 	console.log("player has to draw two");
-	playerTurnIs();
 }
 
 //wild card logic
