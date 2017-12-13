@@ -159,6 +159,7 @@ function reset(){
 	//clear current game board
 	//clear player hand in player arrays
 	//ask how many players from user input
+	$('#game-board').empty();
 	setGameBoard();
 }
 
