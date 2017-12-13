@@ -93,7 +93,7 @@ function playerTurnIs(){
 			turn=playerArr.length-1;
 		}
 		currentPlayer = playerArr[turn];
-		
+		document.getElementById('player'+turn).style.display = "block";
 	}
 	console.log("current turn is",playerArr[turn]);
 }
@@ -123,11 +123,30 @@ function playCard(){
 		};
 	}else if(cardPlayed[0].value === "wildCard"){
 		playWildCard();
+		discardPile.unshift(cardPlayed[0]);
+		var discardCard = document.getElementById('discardCard');
+		discardCard.setAttribute('class', 'card');
+		discardCard.classList.add(discardPile[0].color);
+		discardCard.classList.add(discardPile[0].value);
+		discardCard.textContent= discardPile[0].value;
+		discardCard.style.backgroundColor = discardPile[0].color;
+		addPlayerHand();
+		playerTurnIs();
 	}else if(cardPlayed[0].value === "wildCardDrawFour"){
 		playWildCardDrawFour();
+		discardPile.unshift(cardPlayed[0]);
+		var discardCard = document.getElementById('discardCard');
+		discardCard.setAttribute('class', 'card');
+		discardCard.classList.add(discardPile[0].color);
+		discardCard.classList.add(discardPile[0].value);
+		discardCard.textContent= discardPile[0].value;
+		discardCard.style.backgroundColor = discardPile[0].color;
+		addPlayerHand();
+		playerTurnIs();
 	}else{
 		console.log("try again");
 	}
+	
 }
 	//check if card value or color equals that of the one in discardPile[0]
 	// if(this.value === discardPile[0].value || this.color === discardPile.color){

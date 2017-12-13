@@ -1,21 +1,47 @@
 //skip logic
 function skipCard(){
+	var cardPlayed = playerArr[turn].playerHand.splice($(this).index(), 1);
 	turn++;
 	console.log("skip card was played");
+	discardPile.unshift(cardPlayed[0]);
+	var discardCard = document.getElementById('discardCard');
+	discardCard.setAttribute('class', 'card');
+	discardCard.classList.add(discardPile[0].color);
+	discardCard.classList.add(discardPile[0].value);
+	discardCard.textContent= discardPile[0].value;
+	discardCard.style.backgroundColor = discardPile[0].color;
+	addPlayerHand();
 	playerTurnIs();
 }
 
 //reverse logic
 function reverseCard(){
+	var cardPlayed = playerArr[turn].playerHand.splice($(this).index(), 1);
 	if(reverse === false){
 		reverse = true;
+		discardPile.unshift(cardPlayed[0]);
+		var discardCard = document.getElementById('discardCard');
+		discardCard.setAttribute('class', 'card');
+		discardCard.classList.add(discardPile[0].color);
+		discardCard.classList.add(discardPile[0].value);
+		discardCard.textContent= discardPile[0].value;
+		discardCard.style.backgroundColor = discardPile[0].color;
+		addPlayerHand();
+		playerTurnIs();
 	}
 	if(reverse === true){
 		reverse = false;
+		discardPile.unshift(cardPlayed[0]);
+		var discardCard = document.getElementById('discardCard');
+		discardCard.setAttribute('class', 'card');
+		discardCard.classList.add(discardPile[0].color);
+		discardCard.classList.add(discardPile[0].value);
+		discardCard.textContent= discardPile[0].value;
+		discardCard.style.backgroundColor = discardPile[0].color;
+		addPlayerHand();
+		playerTurnIs();
 	};
 	console.log("reverse card was played");
-	playerTurnIs();
-
 }
 
 //draw two logic
