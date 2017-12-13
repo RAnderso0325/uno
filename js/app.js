@@ -1,4 +1,4 @@
-var turn = 0; //current index
+var turn = -1; //current index
 var shuffledDeck;
 var reverse = false;
 var discardPile = [];
@@ -31,12 +31,14 @@ function dealCards(){
     for(var i=0; i<playerArr.length; i++){
     	var playerInPlay = document.createElement('div');
     	playerInPlay.setAttribute('id', 'player'+i);
+    	playerInPlay.setAttribute('class', 'player');
     	var playerTitle = document.createElement('h2');
     	playerTitle.textContent = "Player "+(i+1);
     	playerInPlay.appendChild(playerTitle);
     	playerArr[i].playerHand = shuffledDeck.splice(0,7);
     	var hand = document.createElement('div');
     	hand.setAttribute('class', 'hand');
+    	hand.id = "hand"+i;
     	// hand.setAttribute('id', 'player'+i);
     	playerInPlay.style.display = "none";
     	document.getElementById('game-board').appendChild(playerInPlay).appendChild(hand);
@@ -51,43 +53,39 @@ function dealCards(){
 function addPlayerHand(){
 	for(var i=0; i<playerArr.length; i++){
 		var playerHand = playerArr[i].playerHand;
+		$('#hand'+i).empty();
 		for(var j=0; j<playerHand.length; j++){
 			var card = document.createElement('div');
-			console.log(playerHand[j].color);
 			card.setAttribute('class', 'card');
 			card.classList.add(playerHand[j].color);
 			card.classList.add(playerHand[j].value);
 			card.textContent=playerHand[j].value;
 			card.style.backgroundColor = playerHand[j].color;
 			card.addEventListener('click', playCard);
-			document.getElementById('player'+i).appendChild(card);
+			$('#hand'+i).append(card);
 		}
 	}
 }
 
 //GAME PLAY:
 function createDiscardPile(){
-	var discardPileTitle = document.createElement('h2');
-	discardPileTitle.textContent = "Discard Pile";
-	document.getElementById('game-board').appendChild(discardPileTitle);
-
-	var discardCard = document.createElement('div');
-	discardCard.setAttribute('class', 'card');
+	var discardCard = document.getElementById('discardCard');
 	discardCard.classList.add(discardPile[0].color);
 	discardCard.classList.add(discardPile[0].value);
 	discardCard.textContent=discardPile[0].value;
 	discardCard.style.backgroundColor = discardPile[0].color;
-	document.getElementById('game-board').appendChild(discardCard);
 }
 
 function playerTurnIs(){
+	//set all hand divs to display: none
+	$('.player').css('display', 'none');
 	if(reverse === false){
 		turn++;
 		if(turn>=playerArr.length){
 			turn=0;
 		}
 		currentPlayer = playerArr[turn];
-		document.getElementById('player'+turn).style.display = "inline-block";
+		document.getElementById('player'+turn).style.display = "block";
 	}else{
 		turn--;
 		if(turn<=0){
@@ -102,8 +100,31 @@ function playerTurnIs(){
 //card must match either color or value to be played
 function playCard(){
 	console.log("card is played");
-	//check if card value or color equals that of the one in discardPile[0]
+	console.log($(this).index());
 
+	var cardPlayed = playerArr[turn].playerHand.splice($(this).index(), 1);
+	
+	console.log('card spliced', cardPlayed[0].color);
+	discardPile.unshift(cardPlayed[0]);
+	//check if card value or color equals that of the one in discardPile[0]
+	// if(this.value === discardPile[0].value || this.color === discardPile.color){
+	// 	discardPile.unshift(this);
+	var discardCard = document.getElementById('discardCard');
+	discardCard.setAttribute('class', 'card');
+	discardCard.classList.add(cardPlayed[0].color);
+	discardCard.classList.add(cardPlayed[0].value);
+	discardCard.textContent= cardPlayed[0].value;
+	discardCard.style.backgroundColor = cardPlayed[0].color;
+
+	//Rerender player who just played
+	//playerArr[turn].playerHand
+	addPlayerHand();
+
+	//console.log(discardCard);
+	//discardCard.style.backgroundColor = discardPile[0].color;
+	// discardCard.classList.add()
+	// 	console.log("this is working");
+	// }
 	//if it is not equal then prompt the user to play a card or draw a card
 
 	//if it is equal...
@@ -116,6 +137,7 @@ function playCard(){
 
 	playerTurnIs();
 }
+
 
 //draw logic
 //include draw card button

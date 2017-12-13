@@ -1,7 +1,6 @@
 //skip logic
 function skipCard(){
 	turn++;
-	turn++;
 	console.log("skip card was played");
 	playerTurnIs();
 }
@@ -21,10 +20,10 @@ function reverseCard(){
 
 //draw two logic
 function drawTwo(){
-	turn++;
 	drawCard();
 	drawCard();
 	console.log("player has to draw two");
+	playerTurnIs();
 }
 
 //wild card logic
