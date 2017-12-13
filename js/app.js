@@ -1,4 +1,4 @@
-var turn = -1; //current index
+var turn = 0; //current index
 var shuffledDeck;
 var reverse = false;
 var discardPile = [];
@@ -10,6 +10,7 @@ function setGameBoard(){
 	console.log("game board is ready");
 	shuffleDeck();
 	dealCards();
+	$('#player0').css('display', 'block');
 }
 
 //shuffle function
@@ -103,22 +104,29 @@ function playCard(){
 	console.log($(this).index());
 
 	var cardPlayed = playerArr[turn].playerHand.splice($(this).index(), 1);
+	if(cardPlayed[0].color === discardPile[0].color || cardPlayed[0].value === discardPile[0].value){
+		console.log('card spliced', cardPlayed[0].color);
+		discardPile.unshift(cardPlayed[0]);
+		var discardCard = document.getElementById('discardCard');
+		discardCard.setAttribute('class', 'card');
+		discardCard.classList.add(cardPlayed[0].color);
+		discardCard.classList.add(cardPlayed[0].value);
+		discardCard.textContent= cardPlayed[0].value;
+		discardCard.style.backgroundColor = cardPlayed[0].color;
+		addPlayerHand();
+		playerTurnIs();
+	}else{
+		console.log("try again");
+	}
 	
-	console.log('card spliced', cardPlayed[0].color);
-	discardPile.unshift(cardPlayed[0]);
 	//check if card value or color equals that of the one in discardPile[0]
 	// if(this.value === discardPile[0].value || this.color === discardPile.color){
 	// 	discardPile.unshift(this);
-	var discardCard = document.getElementById('discardCard');
-	discardCard.setAttribute('class', 'card');
-	discardCard.classList.add(cardPlayed[0].color);
-	discardCard.classList.add(cardPlayed[0].value);
-	discardCard.textContent= cardPlayed[0].value;
-	discardCard.style.backgroundColor = cardPlayed[0].color;
+	
 
 	//Rerender player who just played
 	//playerArr[turn].playerHand
-	addPlayerHand();
+	// addPlayerHand();
 
 	//console.log(discardCard);
 	//discardCard.style.backgroundColor = discardPile[0].color;
@@ -135,7 +143,7 @@ function playCard(){
 
 	//make the style display none again
 
-	playerTurnIs();
+	// playerTurnIs();
 }
 
 
