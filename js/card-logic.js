@@ -1,6 +1,11 @@
 //skip logic
 function skipCard(){
-	turn++;
+	// if(reverse === false){
+	// 	turn++;
+	// }else if(reverse === true){
+	// 	turn--;
+	// };
+	playerTurnIs();
 	console.log("skip card was played");
 }
 
