@@ -1,17 +1,11 @@
 //skip logic
 function skipCard(){
-	// if(reverse === false){
-	// 	turn++;
-	// }else if(reverse === true){
-	// 	turn--;
-	// };
 	playerTurnIs();
 	console.log("skip card was played");
 }
 
 //reverse logic
 function reverseCard(){
-	// console.log(reverse, "in the reverse card function");
 	if(reverse === false){
 		reverse = true;
 	}else if(reverse === true){
@@ -23,7 +17,7 @@ function reverseCard(){
 
 //draw two logic
 function drawTwo(){
-	playerTurnIs();
+	// playerTurnIs();
 	drawCard();
 	drawCard();
 	console.log("player has to draw two");

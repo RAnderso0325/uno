@@ -52,6 +52,9 @@ function checkCard(){
 		}else if(cardPlayed[0].value === "reverse"){
 			reverseCard();
 			changeDiscard();
+		}else if(cardPlayed[0].value === "plusTwo"){
+			changeDiscard();
+			drawTwo();
 		}else{
 			changeDiscard();
 		};
