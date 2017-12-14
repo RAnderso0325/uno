@@ -41,8 +41,13 @@ function playWildCard(){
 }
 
 //wild card draw four logic
+function startPlayWildCardDrawFour(){
+	startPlayWildCard();
+	playerTurnIs();
+	playWildCardDrawFour();
+}
+
 function playWildCardDrawFour(){
-	playWildCard();
 	drawCard();
 	drawCard();
 	drawCard();

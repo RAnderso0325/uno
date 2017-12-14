@@ -31,7 +31,7 @@ function changeDiscard(){
 	discardCard.textContent= discardPile[0].value;
 	discardCard.style.backgroundColor = discardPile[0].color;
 	addPlayerHand();
-	playerTurnIs();
+	// playerTurnIs();
 }
 
 //card has been played
@@ -49,20 +49,25 @@ function checkCard(){
 		if(cardPlayed[0].value === "skip"){
 			skipCard();
 			changeDiscard();
+			playerTurnIs();
 		}else if(cardPlayed[0].value === "reverse"){
 			reverseCard();
 			changeDiscard();
+			playerTurnIs();
 		}else if(cardPlayed[0].value === "plusTwo"){
 			changeDiscard();
+			playerTurnIs();
 			drawTwo();
 		}else{
 			changeDiscard();
+			playerTurnIs();
 		};
 	}else if(cardPlayed[0].value === "wildCard"){
 		startPlayWildCard();
+		playerTurnIs();
 	}else if(cardPlayed[0].value === "wildCardDrawFour"){
-		changeDiscard();
-		playWildCardDrawFour();
+		// changeDiscard();
+		startPlayWildCardDrawFour();
 	}else{
 		console.log("try again");
 	}
