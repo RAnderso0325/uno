@@ -1,3 +1,4 @@
+// var modal = $( "#creategamemodal" ).dialog( "option", "modal" );
 var turn = 0; //current index
 var shuffledDeck;
 var reverse = false;

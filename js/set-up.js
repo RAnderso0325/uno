@@ -69,3 +69,11 @@ function createDiscardPile(){
 	discardCard.textContent=discardPile[0].value;
 	discardCard.style.backgroundColor = discardPile[0].color;
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+	$('#myModal').modal('hide');
+	document.getElementById('new-game').addEventListener('click', reset);
+	document.getElementById('draw-card').addEventListener('click', drawCard);
+	// $( "#creategamemodal" ).dialog( "option", "modal", true );
+	setGameBoard();
+});

@@ -18,27 +18,34 @@ function reverseCard(){
 //draw two logic
 function drawTwo(){
 	// playerTurnIs();
+
 	drawCard();
 	drawCard();
 	console.log("player has to draw two");
 }
 
 //wild card logic
+function startPlayWildCard(){
+	$('#wildCardModal').modal('show');
+	var button = $('#submit-button')
+	button.click(function(){
+		$('#wildCardModal').modal('hide');
+		playWildCard();
+	});
+}
+
 function playWildCard(){
-	//player chooses color
-	//show input box for color choice, maybe radio buttons
-	//change color variable to the proper color choice
-	//^using user input
-	console.log("user played a wild card");
-	playerTurnIs();
+	var userSelection = $('input[name="option"]:checked');
+	cardPlayed[0].color = userSelection[0].value;
+	changeDiscard();
 }
 
 //wild card draw four logic
 function playWildCardDrawFour(){
-	drawCard();
-	drawCard();
-	drawCard();
-	drawCard();
 	playWildCard();
+	drawCard();
+	drawCard();
+	drawCard();
+	drawCard();
 	console.log("user played a wild card draw four");
 }

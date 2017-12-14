@@ -59,11 +59,10 @@ function checkCard(){
 			changeDiscard();
 		};
 	}else if(cardPlayed[0].value === "wildCard"){
-		playWildCard();
-		changeDiscard();
+		startPlayWildCard();
 	}else if(cardPlayed[0].value === "wildCardDrawFour"){
-		playWildCardDrawFour();
 		changeDiscard();
+		playWildCardDrawFour();
 	}else{
 		console.log("try again");
 	}
@@ -96,11 +95,6 @@ function reset(){
 	//clear player hand in player arrays
 	//ask how many players from user input
 	$('#game-board').empty();
+	reverse = false,
 	setGameBoard();
 }
-
-document.addEventListener("DOMContentLoaded", function(){
-	document.getElementById('new-game').addEventListener('click', reset);
-	document.getElementById('draw-card').addEventListener('click', drawCard);
-	setGameBoard();
-});
