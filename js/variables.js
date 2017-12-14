@@ -5,4 +5,5 @@ var reverse = false;
 var discardPile = [];
 var currentPlayer = playerArr[0];
 var cardPlayed;
+var weHaveAWinner = false;
 // var playerInPlay;

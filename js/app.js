@@ -44,34 +44,39 @@ function playCard(){
 function checkCard(){
 	console.log("card is played");
 	console.log($(this).index());
-	if(cardPlayed[0].color === discardPile[0].color || cardPlayed[0].value === discardPile[0].value){
-		console.log('card spliced', cardPlayed[0].color);
-		if(cardPlayed[0].value === "skip"){
-			skipCard();
-			changeDiscard();
-			playerTurnIs();
-		}else if(cardPlayed[0].value === "reverse"){
-			reverseCard();
-			changeDiscard();
-			playerTurnIs();
-		}else if(cardPlayed[0].value === "plusTwo"){
-			changeDiscard();
-			playerTurnIs();
-			drawTwo();
-		}else{
-			changeDiscard();
-			playerTurnIs();
-		};
-	}else if(cardPlayed[0].value === "wildCard"){
-		startPlayWildCard();
-		playerTurnIs();
-	}else if(cardPlayed[0].value === "wildCardDrawFour"){
-		// changeDiscard();
-		startPlayWildCardDrawFour();
+	didSomeoneWin();
+	if(weHaveAWinner === true){
+		console.log("uno uno uno!");
+		changeDiscard();
 	}else{
-		console.log("try again");
+		if(cardPlayed[0].color === discardPile[0].color || cardPlayed[0].value === discardPile[0].value){
+			console.log('card spliced', cardPlayed[0].color);
+			if(cardPlayed[0].value === "skip"){
+				skipCard();
+				changeDiscard();
+				playerTurnIs();
+			}else if(cardPlayed[0].value === "reverse"){
+				reverseCard();
+				changeDiscard();
+				playerTurnIs();
+			}else if(cardPlayed[0].value === "plusTwo"){
+				changeDiscard();
+				playerTurnIs();
+				drawTwo();
+			}else{
+				changeDiscard();
+				playerTurnIs();
+			};
+		}else if(cardPlayed[0].value === "wildCard"){
+			startPlayWildCard();
+			playerTurnIs();
+		}else if(cardPlayed[0].value === "wildCardDrawFour"){
+			// changeDiscard();
+			startPlayWildCardDrawFour();
+		}else{
+			console.log("try again");
+		}
 	}
-	
 }
 
 //draw logic
@@ -92,6 +97,18 @@ function drawCard(){
 	card.addEventListener('click', playCard);
 	$('#hand'+turn).append(card);
 	//add card to player hand
+}
+
+function didSomeoneWin(){
+	for(var i=0; i<playerArr.length; i++){
+		var playerHand = playerArr[i].playerHand;
+		if(playerHand.length === 1){
+			console.log("uno");
+			weHaveAWinner = true;
+		}else{
+			console.log("still goin");
+		}
+	}
 }
 
 function reset(){
