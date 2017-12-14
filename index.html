@@ -8,27 +8,46 @@
 
 </head>
 <body>
-	<h1>UNO</h1>
-	<div id="creategamemodal" style="display:none;">
-		<h1>Number of Players</h1>
-		<form id="form1">
-			<input type="radio" name="player-option" value="option0" required="required">One
-			<input type="radio" name="player-option" value="option1" required="required">Two
-			<input type="radio" name="player-option" value="option2" required="required">Three
-			<input type="radio" name="player-option" value="option3" required="required">Four<br>
-			<input type="button" value="Add Players">
-		</form>
-		<form id="form2">
-			<input type="text" value="" placeholder="Player Name">
-			<input type="button" value="Start Game!">
-		</form>
+<h1>UNO</h1>
+<div class="modal" id="playerNumberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="model-content">
+			<div class="model-header">
+				<h4 class="model-title" id="playerPickTitle">Number of Players</h4>
+			</div>
+			<div class="model-body">
+				<div class="form-check form-check-inline">
+  					<label class="form-check-label">
+    					<input class="form-check-input" type="radio" name="option" id="option-one" value="one" required="required"> One
+  					</label>
+				</div>
+				<div class="form-check form-check-inline">
+  					<label class="form-check-label">
+    					<input class="form-check-input" type="radio" name="option" id="option-two" value="two" required="required"> Two
+  					</label>
+				</div>
+				<div class="form-check form-check-inline">
+  					<label class="form-check-label">
+    					<input class="form-check-input" type="radio" name="option" id="option-three" value="three" required="required"> Three
+  					</label>
+				</div>
+				<div class="form-check form-check-inline">
+  					<label class="form-check-label">
+    					<input class="form-check-input" type="radio" name="option" id="option-four" value="four" required="required"> Four
+  					</label>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<input type="submit" class="btn btn-primary" data-dismiss="modal" id="start-button" value="Start!">
+			</div>
+		</div>
 	</div>
-	<h2>Discard Pile</h2>
-	<div id="discardCard" class="card"></div>
-	<div id="game-board">
-	</div>
-	<button type="add" id="draw-card">Draw Card</button>
-	<button type="reset" id="new-game">New Game</button>
+</div>
+<h2>Discard Pile</h2>
+<div id="discardCard" class="card"></div>
+<div id="game-board"></div>
+<button type="add" id="draw-card">Draw Card</button>
+<button type="reset" id="new-game">New Game</button>
 
 <div class="modal" id="wildCardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
@@ -64,7 +83,18 @@
 		</div>
 	</div>
 </div>
-
+<div class="modal" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				<h2>UNO! Player <span id="winnerIndex"></span> won!</h2>
+			</div>
+			<div class="modal-footer">
+				<input type="submit" class="btn btn-primary" data-dismiss="modal" id="new-game-button" value="Play Again">
+			</div>
+		</div>
+	</div>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./js/players.js"></script>

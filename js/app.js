@@ -43,7 +43,6 @@ function playCard(){
 //card must match either color or value to be played
 function checkCard(){
 	console.log("card is played");
-	console.log($(this).index());
 	didSomeoneWin();
 	if(weHaveAWinner === true){
 		console.log("uno uno uno!");
@@ -105,18 +104,31 @@ function didSomeoneWin(){
 		if(playerHand.length === 1){
 			console.log("uno");
 			weHaveAWinner = true;
+			someoneWon();
 		}else{
 			console.log("still goin");
 		}
 	}
 }
 
+function someoneWon(){
+	$('#winnerIndex').text(currentPlayer.playerName);
+	$('#winnerModal').modal('show');
+	var button = $('#new-game-button');
+	button.click(function(){
+		$('#winnerModal').modal('hide');
+		reset();
+	});
+	console.log("I'm makin a modal maybe");
+}
+
 function reset(){
-	console.log("still need to add clear current board functionality");
+	console.log("reset player hands still!!!");
 	//clear current game board
 	//clear player hand in player arrays
 	//ask how many players from user input
 	$('#game-board').empty();
 	reverse = false,
+	weHaveAWinner = false,
 	setGameBoard();
 }

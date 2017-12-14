@@ -70,10 +70,17 @@ function createDiscardPile(){
 	discardCard.style.backgroundColor = discardPile[0].color;
 }
 
+function setPlayerArr(){
+	setGameBoard();
+}
+
 document.addEventListener("DOMContentLoaded", function(){
-	$('#myModal').modal('hide');
 	document.getElementById('new-game').addEventListener('click', reset);
 	document.getElementById('draw-card').addEventListener('click', drawCard);
-	// $( "#creategamemodal" ).dialog( "option", "modal", true );
-	setGameBoard();
+	$('#playerNumberModal').modal('show');
+	var button = $('#start-button');
+	button.click(function(){
+		$('#winnerModal').modal('hide');
+		setPlayerArr();
+	})
 });
