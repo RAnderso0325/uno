@@ -48,7 +48,7 @@ function checkCard(){
 		console.log("uno uno uno!");
 		changeDiscard();
 	}else{
-		if(cardPlayed[0].color === discardPile[0].color || cardPlayed[0].value === discardPile[0].value){
+		if(cardPlayed[0].color === discardPile[0].color || cardPlayed[0].value === discardPile[0].value && cardPlayed[0].value !== "wildCard" && cardPlayed[0].value !== "wildCardDrawFour"){
 			console.log('card spliced', cardPlayed[0].color);
 			if(cardPlayed[0].value === "skip"){
 				skipCard();

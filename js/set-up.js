@@ -97,16 +97,20 @@ function setPlayerArr(){
 document.addEventListener("DOMContentLoaded", function(){
 	document.getElementById('new-game').addEventListener('click', reset);
 	document.getElementById('draw-card').addEventListener('click', drawCard);
-	$('#playerNumberModal').modal('show');
-    toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values
-   //this will call our toggleFields function every time the selection value of our underAge field changes
-    $("#number-of-players").change(function() { 
-    	toggleFields(); 
-    });
-//this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
-	var button = $('#start-button');
-	button.click(function(){
-		setPlayerArr();
-		$('#playerNumberModal').modal('hide');
-	})
+	$('#instructionsModal').modal('show');
+	var buttonNext = $('#name-button');
+	buttonNext.click(function(){
+		$('#instructionsModal').modal('hide');
+		$('#playerNumberModal').modal('show');
+    	toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values
+   		//this will call our toggleFields function every time the selection value of our underAge field changes
+    	$("#number-of-players").change(function() { 
+    		toggleFields(); 
+    	}); //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
+		var buttonStart = $('#start-button');
+		buttonStart.click(function(){
+			setPlayerArr();
+			$('#playerNumberModal').modal('hide');
+		})
+	});
 });

@@ -16,6 +16,30 @@
 <button type="add" id="draw-card">Draw Card</button>
 <button type="reset" id="new-game">New Game</button>
 
+<div class="modal" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+    		<div class="modal-header">
+      			<h4 class="modal-title" id="myModalLabel">How to play UNO!</h4>
+      		</div>
+      		<div class="modal-body">
+      			<h4>Set-Up:</h4>
+      				<p>On the next screen, you'll select a number of players and enter player names.<br>Once the game begins, each player will be dealt seven cards and a final card will be added to the discard pile.<br>The object of the game is to be the first player to be left with one card.</p>
+      			<h4>Game Play:</h4>
+      				<p>There are four color suits, red, yellow, green, and blue. For each color suit, there are 10 number cards, 0-9, in addition to two reverse cards, skip cards, and draw two cards.<br>During each player's turn, they must play a card, by clicking on it, that matches either the color suit or the value, numeric or action, of the card on the top of the discard pile. If they do not have a card that matches, or a wild card, they must draw a card by clicking the Draw Card button.</p>
+      				<h5>Wild Card</h5>
+      					<p>Wild Cards, and Wild Card Draw Fours, allow the player to choose what color suit they would like to change the discard card to. These cards are usually used when the player does not have a card of the current color suit. Wild Card Draw Fours have the additional functionality of forcing the next player to draw four cards.</p>
+      				<h5>Action Cards</h5>
+      					<p><strong>Reverse Cards:</strong> when this card is played, the order of play will reverse, making it the previous player's turn. This new order will continue until another reverse card is played.<br><strong>Skip Cards:</strong> when this card is played, the game will skip over the next player's turn.<br><strong>Draw Two Cards:</strong> when this card is played, it will force the next player to draw two cards.</p>
+			</div>
+			<div class="modal-footer">
+				<span><strong>Ready to Play?</strong>
+				<input type="submit" class="btn btn-primary" data-dismiss="modal" id="name-button" value="Enter Player Names >"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="modal" id="playerNumberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
