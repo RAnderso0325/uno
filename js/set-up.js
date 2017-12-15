@@ -70,7 +70,36 @@ function createDiscardPile(){
 	discardCard.style.backgroundColor = discardPile[0].color;
 }
 
+function toggleFields(){
+    if($("#number-of-players").val() > 1){
+        $("#more-players").show();
+        addPlayerNameFields();
+    }else{
+        $("#more-players").hide();
+    }
+}
+
+function addPlayerNameFields(){
+	var numberPlayers = $("#number-of-players").val();
+	for(var i=0; i < numberPlayers-2; i++){
+		$('#more-players').append($('<p></p>').text('Player Name: ').append($('<input type="text" name="player_name" class="name-of-players" value="">')));
+		console.log($(".name-of-players"));
+	}
+}
+
 function setPlayerArr(){
+	$.each($('.name-of-players'), function(index, value){
+		console.log(index + ':' + $(value).val());
+		playerArr.push({playerName: $(value).val(), playerHand: []});
+	});
+	console.log(playerArr);
+
+	// $("input").each(function () {
+ //    	var productId = $(this).attr('id');
+ //    	var clonedobj = jQuery.extend({}); //create a shallow
+ //    	clonedobj.ProductId = productId;
+ //    	playerArr.push(clonedobj);
+	// });
 	setGameBoard();
 }
 
@@ -78,9 +107,15 @@ document.addEventListener("DOMContentLoaded", function(){
 	document.getElementById('new-game').addEventListener('click', reset);
 	document.getElementById('draw-card').addEventListener('click', drawCard);
 	$('#playerNumberModal').modal('show');
+    toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values
+   //this will call our toggleFields function every time the selection value of our underAge field changes
+    $("#number-of-players").change(function() { 
+    	toggleFields(); 
+    });
+//this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
 	var button = $('#start-button');
 	button.click(function(){
-		$('#winnerModal').modal('hide');
 		setPlayerArr();
+		$('#playerNumberModal').modal('hide');
 	})
 });

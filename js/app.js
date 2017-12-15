@@ -119,7 +119,6 @@ function someoneWon(){
 		$('#winnerModal').modal('hide');
 		reset();
 	});
-	console.log("I'm makin a modal maybe");
 }
 
 function reset(){
