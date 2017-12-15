@@ -27,7 +27,7 @@ function dealCards(){
     	playerInPlay.setAttribute('id', 'player'+i);
     	playerInPlay.setAttribute('class', 'player');
     	var playerTitle = document.createElement('h2');
-    	playerTitle.textContent = "Player "+(i+1);
+    	playerTitle.textContent = "Player "+playerArr[i].playerName;
     	playerInPlay.appendChild(playerTitle);
     	playerArr[i].playerHand = shuffledDeck.splice(0,7);
     	var hand = document.createElement('div');
@@ -89,17 +89,8 @@ function addPlayerNameFields(){
 
 function setPlayerArr(){
 	$.each($('.name-of-players'), function(index, value){
-		console.log(index + ':' + $(value).val());
 		playerArr.push({playerName: $(value).val(), playerHand: []});
 	});
-	console.log(playerArr);
-
-	// $("input").each(function () {
- //    	var productId = $(this).attr('id');
- //    	var clonedobj = jQuery.extend({}); //create a shallow
- //    	clonedobj.ProductId = productId;
- //    	playerArr.push(clonedobj);
-	// });
 	setGameBoard();
 }
 
