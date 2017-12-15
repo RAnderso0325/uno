@@ -74,12 +74,12 @@ function checkCard(){
 			startPlayWildCardDrawFour();
 		}else{
 			console.log("try again");
+			playerArr[turn].playerHand.push(cardPlayed[0]);
 		}
 	}
 }
 
 //draw logic
-//include draw card button
 function drawCard(){
 	console.log("player would like to draw a card");
 	var drawnCard = shuffledDeck.splice(0,1);
@@ -127,7 +127,8 @@ function reset(){
 	//clear player hand in player arrays
 	//ask how many players from user input
 	$('#game-board').empty();
+	playerArr=[];
 	reverse = false,
 	weHaveAWinner = false,
-	setGameBoard();
+	startGameModals();
 }

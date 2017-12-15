@@ -68,10 +68,33 @@ function createDiscardPile(){
 	discardCard.classList.add(discardPile[0].value);
 	discardCard.textContent=discardPile[0].value;
 	discardCard.style.backgroundColor = discardPile[0].color;
+	if(discardPile[0].value === "wildCard" || discardPile[0].value === "wildCardDrawFour"){
+		$('#wildCardModal').modal('show');
+		var button = $('#submit-button')
+		button.click(function(){
+			$('#wildCardModal').modal('hide');
+			var userSelection = $('input[name="option"]:checked');
+			discardPile[0].color = userSelection[0].value;
+			discardCard.setAttribute('class', 'card');
+			discardCard.classList.add(discardPile[0].color);
+			discardCard.classList.add(discardPile[0].value);
+			discardCard.textContent= discardPile[0].value;
+			discardCard.style.backgroundColor = discardPile[0].color;
+			addPlayerHand();
+		});
+	}else if(discardPile[0].value === "skip"){
+		$('#player0').css('display', 'none');
+		playerTurnIs();
+	}else if(discardPile[0].value === "reverse"){
+		reverse=true;
+	}else if(discardPile[0].value === "plusTwo"){
+		drawCard();
+		drawCard();
+	}
 }
 
 function toggleFields(){
-    if($("#number-of-players").val() > 1){
+    if($("#number-of-players").val() > 2){
         $("#more-players").show();
         addPlayerNameFields();
     }else{
@@ -81,7 +104,7 @@ function toggleFields(){
 
 function addPlayerNameFields(){
 	var numberPlayers = $("#number-of-players").val();
-	for(var i=0; i < numberPlayers-2; i++){
+	for(var i=0; i < numberPlayers-3; i++){
 		$('#more-players').append($('<p></p>').text('Player Name: ').append($('<input type="text" name="player_name" class="name-of-players" value="">')));
 		console.log($(".name-of-players"));
 	}
@@ -96,6 +119,27 @@ function setPlayerArr(){
 
 function startGameModals(){
 	$('#instructionsModal').modal('show');
+	var buttonVideo = $("#button-video");
+	buttonVideo.click(function(){
+		window.open("https://www.youtube.com/watch?app=desktop&persist_app=1&noapp=1&v=g_Agq0r63CQ");
+		$('#instructionsModal').modal('hide');
+		$('#playerNumberModal').modal('show');
+    	toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values
+   		//this will call the toggleFields function every time the selection value of the player number field changes
+    	$("#number-of-players").change(function() { 
+    		toggleFields(); 
+    	}); //this toggles the visibility of the additional name fields depending on the current selected value of the number field
+		var buttonStart = $('#start-button');
+		buttonStart.click(function(){
+			setPlayerArr();
+			$('#playerNumberModal').modal('hide');
+		})
+		var buttonBack = $('#back-button');
+		buttonBack.click(function(){
+			$('#playerNameModal').modal('hide');
+			startGameModals();
+		})
+	})
 	var buttonNext = $('#name-button');
 	buttonNext.click(function(){
 		$('#instructionsModal').modal('hide');

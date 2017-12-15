@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>UNO Game</title>
+	<title>UNO!</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
@@ -12,8 +12,8 @@
 <h2>Discard Pile</h2>
 <div id="discardCard" class="card"></div>
 <div id="game-board"></div>
-<button type="add" id="draw-card">Draw Card</button>
-<button type="reset" id="new-game">New Game</button>
+<button type="add" class="btn btn-info" id="draw-card">Draw Card</button>
+<button type="reset" class="btn btn-success" id="new-game">New Game</button>
 
 <div class="modal" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
@@ -32,8 +32,10 @@
       					<p><strong>Reverse Cards:</strong> when this card is played, the order of play will reverse, making it the previous player's turn. This new order will continue until another reverse card is played.<br><strong>Skip Cards:</strong> when this card is played, the game will skip over the next player's turn.<br><strong>Draw Two Cards:</strong> when this card is played, it will force the next player to draw two cards.</p>
 			</div>
 			<div class="modal-footer">
-				<span><strong>Ready to Play?</strong><input type="submit" class="btn btn-secondary" value="Not Ready" data-dismiss="modal" onclick="location.href='https://www.youtube.com/watch?app=desktop&persist_app=1&noapp=1&v=g_Agq0r63CQ'">
-				<input type="submit" class="btn btn-primary" data-dismiss="modal" id="name-button" value="Enter Player Names"></span>
+				<span><strong>Ready to Play? </strong>
+				<input type="submit" class="btn btn-info" value="Not Ready" data-dismiss="modal" id="button-video">
+				<input type="submit" class="btn btn-success" data-dismiss="modal" id="name-button" value="Enter Player Names">
+				</span>
 			</div>
 		</div>
 	</div>
@@ -49,7 +51,6 @@
 				<form>
     				<p>Number of Players:
         				<select id="number-of-players" name="Number of Players:">
-            				<option value="1">1</option>
             				<option value="2">2</option>
             				<option value="3">3</option>
             				<option value="4">4</option>
@@ -65,17 +66,19 @@
     				</p>
     				<p>Player Name:
         				<input type="text" name="player_name" class="name-of-players" value="">
+    				</p>Player Name:
+    					<input type="text" name="player_name" class="name-of-players" value="">
     				</p>
     				<div id="more-players">
-        				<p>Player Name:
+        				<!-- <p>Player Name:
             				<input type="text" name="player_name" class="name-of-players" value="">
-        				</p>
+        				</p> -->
     				</div>
     			</form>
 			</div>
 			<div class="modal-footer">
-				<input type="button" class="btn btn-secondary" id="back-button" data-dismiss="modal" value="Back to Instructions">
-				<input type="submit" class="btn btn-primary" data-dismiss="modal" id="start-button" value="Start Playing!">
+				<input type="button" class="btn btn-info" id="back-button" data-dismiss="modal" value="Back to Instructions">
+				<input type="submit" class="btn btn-success" data-dismiss="modal" id="start-button" value="Start Playing!">
 			</div>
 		</div>
 	</div>
@@ -90,27 +93,27 @@
       		<div class="modal-body">
 				<div class="form-check form-check-inline">
   					<label class="form-check-label">
-    					<input class="form-check-input" type="radio" name="option" id="option-red" value="red" required="required"> Red
+    					<input class="form-check-input" type="radio" name="option" id="option-red" value="#E82002" required="required"> Red
   					</label>
 				</div>
 				<div class="form-check form-check-inline">
   					<label class="form-check-label">
-    					<input class="form-check-input" type="radio" name="option" id="option-yellow" value="yellow" required="required"> Yellow
+    					<input class="form-check-input" type="radio" name="option" id="option-yellow" value="#FFC70A" required="required"> Yellow
   					</label>
 				</div>
 				<div class="form-check form-check-inline">
   					<label class="form-check-label">
-   						<input class="form-check-input" type="radio" name="option" id="option-green" value="green" required="required"> Green
+   						<input class="form-check-input" type="radio" name="option" id="option-green" value="#0CE802" required="required"> Green
   					</label>
 				</div>
 				<div class="form-check form-check-inline">
   					<label class="form-check-label">
-   						<input class="form-check-input" type="radio" name="option" id="option-blue" value="blue" required="required"> Blue
+   						<input class="form-check-input" type="radio" name="option" id="option-blue" value="#1AAEFF" required="required"> Blue
   					</label>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<input type="submit" class="btn btn-primary" data-dismiss="modal" id="submit-button">
+				<input type="submit" class="btn btn-success" data-dismiss="modal" id="submit-button">
 			</div>
 		</div>
 	</div>
@@ -123,7 +126,7 @@
 				<h2>UNO! <span id="winnerIndex"></span> won!</h2>
 			</div>
 			<div class="modal-footer">
-				<input type="submit" class="btn btn-primary" data-dismiss="modal" id="new-game-button" value="Play Again">
+				<input type="submit" class="btn btn-info" data-dismiss="modal" id="new-game-button" value="Play Again">
 			</div>
 		</div>
 	</div>

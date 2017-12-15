@@ -1,466 +1,466 @@
 var deck = [
 {
-	color: "red",
+	color: "#E82002",
 	value: "0",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "1",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "1",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "2",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "2",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "3",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "3",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "4",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "4",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "5",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "5",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "6",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "6",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "7",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "7",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "8",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "8",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "9",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "9",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "skip",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "skip",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "reverse",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "reverse",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "plusTwo",
 },
 {
-	color: "red",
+	color: "#E82002",
 	value: "plusTwo",
 },
 {
-	color: "purple",
+	color: "#7A1BFF",
 	value: "wildCard",
 },
 {
-	color: "purple",
+	color: "#7A1BFF",
 	value: "wildCard",
 },
 {
-	color: "pink",
+	color: "#7A1BFF",
 	value: "wildCardDrawFour",
 },
 {
-	color: "pink",
+	color: "#7A1BFF",
 	value: "wildCardDrawFour",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "0",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "1",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "1",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "2",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "2",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "3",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "3",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "4",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "4",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "5",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "5",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "6",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "6",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "7",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "7",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "8",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "8",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "9",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "9",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "skip",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "skip",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "reverse",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "reverse",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "plusTwo",
 },
 {
-	color: "yellow",
+	color: "#FFC70A",
 	value: "plusTwo",
 },
 {
-	color: "purple",
+	color: "#7A1BFF",
 	value: "wildCard",
 },
 {
-	color: "purple",
+	color: "#7A1BFF",
 	value: "wildCard",
 },
 {
-	color: "pink",
+	color: "#7A1BFF",
 	value: "wildCardDrawFour",
 },
 {
-	color: "pink",
+	color: "#7A1BFF",
 	value: "wildCardDrawFour",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "0",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "1",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "1",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "2",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "2",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "3",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "3",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "4",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "4",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "5",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "5",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "6",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "6",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "7",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "7",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "8",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "8",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "9",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "9",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "skip",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "skip",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "reverse",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "reverse",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "plusTwo",
 },
 {
-	color: "green",
+	color: "#0CE802",
 	value: "plusTwo",
 },
 {
-	color: "purple",
+	color: "#7A1BFF",
 	value: "wildCard",
 },
 {
-	color: "purple",
+	color: "#7A1BFF",
 	value: "wildCard",
 },
 {
-	color: "pink",
+	color: "#7A1BFF",
 	value: "wildCardDrawFour",
 },
 {
-	color: "pink",
+	color: "#7A1BFF",
 	value: "wildCardDrawFour",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "0",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "1",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "1",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "2",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "2",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "3",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "3",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "4",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "4",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "5",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "5",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "6",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "6",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "7",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "7",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "8",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "8",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "9",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "9",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "skip",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "skip",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "reverse",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "reverse",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "plusTwo",
 },
 {
-	color: "blue",
+	color: "#1AAEFF",
 	value: "plusTwo",
 },
 {
-	color: "purple",
+	color: "#7A1BFF",
 	value: "wildCard",
 },
 {
-	color: "purple",
+	color: "#7A1BFF",
 	value: "wildCard",
 },
 {
-	color: "pink",
+	color: "#7A1BFF",
 	value: "wildCardDrawFour",
 },
 {
-	color: "pink",
+	color: "#7A1BFF",
 	value: "wildCardDrawFour",
 }
 ]
