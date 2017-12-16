@@ -122,13 +122,26 @@ function someoneWon(){
 }
 
 function reset(){
-	console.log("reset player hands still!!!");
-	//clear current game board
-	//clear player hand in player arrays
-	//ask how many players from user input
 	$('#game-board').empty();
 	playerArr=[];
 	reverse = false,
 	weHaveAWinner = false,
-	startGameModals();
+	function modals(){
+		$('#playerNumberModal').modal('show');
+    	toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values
+   		//this will call the toggleFields function every time the selection value of the player number field changes
+    	$("#number-of-players").change(function() { 
+    		toggleFields(); 
+    	}); //this toggles the visibility of the additional name fields depending on the current selected value of the number field
+		var buttonStart = $('#start-button');
+		buttonStart.click(function(){
+			setPlayerArr();
+			$('#playerNumberModal').modal('hide');
+		})
+		var buttonBack = $('#back-button');
+		buttonBack.click(function(){
+			$('#playerNameModal').modal('hide');
+			startGameModals();
+		})
+	}
 }

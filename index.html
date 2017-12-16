@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>UNO!</title>
+	<link href="https://fonts.googleapis.com/css?family=Bungee|Hammersmith+One|Heebo|Righteous|Rubik+Mono+One" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
@@ -13,7 +14,7 @@
 <div id="discardCard" class="card"></div>
 <div id="game-board"></div>
 <button type="add" class="btn btn-info" id="draw-card">Draw Card</button>
-<button type="reset" class="btn btn-success" id="new-game">New Game</button>
+<button type="button" class="btn btn-success" id="new-game" data-toggle="modal" data-target="#playerNumberModal">New Game</button>
 
 <div class="modal" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
