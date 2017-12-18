@@ -3,7 +3,7 @@ function setGameBoard(){
 	console.log("game board is ready");
 	shuffleDeck();
 	dealCards();
-	$('#player0').css('display', 'block');
+	// $('#player0').css('display', 'block');
 }
 
 //shuffle function
@@ -68,6 +68,7 @@ function createDiscardPile(){
 	discardCard.classList.add(discardPile[0].value);
 	discardCard.textContent=discardPile[0].value;
 	discardCard.style.backgroundColor = discardPile[0].color;
+	$('#player0').css('display', 'block');
 	if(discardPile[0].value === "wildCard" || discardPile[0].value === "+4WildCard"){
 		$('#wildCardModal').modal('show');
 		var button = $('#submit-button')
@@ -81,15 +82,24 @@ function createDiscardPile(){
 			discardCard.textContent= discardPile[0].value;
 			discardCard.style.backgroundColor = discardPile[0].color;
 			addPlayerHand();
+			if(discardPile[0].value === "+4WildCard"){
+				drawCard();
+				drawCard();
+				drawCard();
+				drawCard();
+			}
+			$('#player0').css('display', 'block');
 		});
 	}else if(discardPile[0].value === "skip"){
 		$('#player0').css('display', 'none');
 		playerTurnIs();
 	}else if(discardPile[0].value === "reverse"){
 		reverse=true;
+		$('#player0').css('display', 'block');
 	}else if(discardPile[0].value === "plusTwo"){
 		drawCard();
 		drawCard();
+		$('#player0').css('display', 'block');
 	}
 }
 
