@@ -22,7 +22,7 @@
 * Bootstrap
 
 ## Approach Taken
-1. I started by finding the number of cards in a typical uno deck and adding all of the cards to a card deck array in its own js file (there are 116 cards in my deck)
+1. I started by finding the number of cards in a typical uno deck and adding all of the cards to a card deck array in its own js file (there are 116 cards in my deck) and then made a trello board with all of the points I thought I'd need, and added steps as I thought of them.
 2. I then added a js file for card-specific logic and went through that file and the app file and sketched out, with comments and console.logs, what each card-specific function would need to do and inked the functions in the appropriate places
 3. Then I made the shuffle deck logic, which uses a Math.random function, and created the deal hand logic in addition to appending the player hands to the board so that I could see what's happening on the board. 
 4. Then I added the logic for creating the discard pile to have the initial card to play against and hid all hands but the player hand in play.
