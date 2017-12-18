@@ -125,7 +125,7 @@ function startGameModals(){
 	$('#instructionsModal').modal('show');
 	var buttonVideo = $("#button-video");
 	buttonVideo.click(function(){
-		window.open("https://www.youtube.com/watch?app=desktop&persist_app=1&noapp=1&v=g_Agq0r63CQ");
+		window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 		$('#instructionsModal').modal('hide');
 		$('#playerNumberModal').modal('show');
     	toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values
