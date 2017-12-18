@@ -68,7 +68,7 @@ function createDiscardPile(){
 	discardCard.classList.add(discardPile[0].value);
 	discardCard.textContent=discardPile[0].value;
 	discardCard.style.backgroundColor = discardPile[0].color;
-	if(discardPile[0].value === "wildCard" || discardPile[0].value === "wildCardDrawFour"){
+	if(discardPile[0].value === "wildCard" || discardPile[0].value === "+4WildCard"){
 		$('#wildCardModal').modal('show');
 		var button = $('#submit-button')
 		button.click(function(){

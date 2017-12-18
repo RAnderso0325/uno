@@ -48,7 +48,7 @@ function checkCard(){
 		console.log("uno uno uno!");
 		changeDiscard();
 	}else{
-		if(cardPlayed[0].color === discardPile[0].color || cardPlayed[0].value === discardPile[0].value && cardPlayed[0].value !== "wildCard" && cardPlayed[0].value !== "wildCardDrawFour"){
+		if(cardPlayed[0].color === discardPile[0].color || cardPlayed[0].value === discardPile[0].value && cardPlayed[0].value !== "wildCard" && cardPlayed[0].value !== "w+4WildCard"){
 			console.log('card spliced', cardPlayed[0].color);
 			if(cardPlayed[0].value === "skip"){
 				skipCard();
@@ -69,7 +69,7 @@ function checkCard(){
 		}else if(cardPlayed[0].value === "wildCard"){
 			startPlayWildCard();
 			playerTurnIs();
-		}else if(cardPlayed[0].value === "wildCardDrawFour"){
+		}else if(cardPlayed[0].value === "+4WildCard"){
 			// changeDiscard();
 			startPlayWildCardDrawFour();
 		}else{
@@ -101,7 +101,7 @@ function drawCard(){
 function didSomeoneWin(){
 	for(var i=0; i<playerArr.length; i++){
 		var playerHand = playerArr[i].playerHand;
-		if(playerHand.length === 1){
+		if(playerHand.length === 0){
 			console.log("uno");
 			weHaveAWinner = true;
 			someoneWon();
@@ -126,6 +126,8 @@ function reset(){
 	playerArr=[];
 	reverse = false,
 	weHaveAWinner = false,
+	turn = 0;
+	currentPlayer = playerArr[0];
 	function modals(){
 		$('#playerNumberModal').modal('show');
     	toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values

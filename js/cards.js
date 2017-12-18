@@ -109,11 +109,11 @@ var deck = [
 },
 {
 	color: "#7A1BFF",
-	value: "wildCardDrawFour",
+	value: "+4WildCard",
 },
 {
 	color: "#7A1BFF",
-	value: "wildCardDrawFour",
+	value: "+4WildCard",
 },
 {
 	color: "#FFC70A",
@@ -225,11 +225,11 @@ var deck = [
 },
 {
 	color: "#7A1BFF",
-	value: "wildCardDrawFour",
+	value: "+4WildCard",
 },
 {
 	color: "#7A1BFF",
-	value: "wildCardDrawFour",
+	value: "+4WildCard",
 },
 {
 	color: "#0CE802",
@@ -341,11 +341,11 @@ var deck = [
 },
 {
 	color: "#7A1BFF",
-	value: "wildCardDrawFour",
+	value: "+4WildCard",
 },
 {
 	color: "#7A1BFF",
-	value: "wildCardDrawFour",
+	value: "+4WildCard",
 },
 {
 	color: "#1AAEFF",
@@ -457,10 +457,10 @@ var deck = [
 },
 {
 	color: "#7A1BFF",
-	value: "wildCardDrawFour",
+	value: "+4WildCard",
 },
 {
 	color: "#7A1BFF",
-	value: "wildCardDrawFour",
+	value: "+4WildCard",
 }
 ]
