@@ -66,7 +66,7 @@ function createDiscardPile(){
 	discardCard.textContent=discardPile[0].value;
 	discardCard.style.backgroundColor = discardPile[0].color;
 	$('#player0').css('display', 'block');
-	if(discardPile[0].value === "wild" || discardPile[0].value === "+4Wild"){
+	if(discardPile[0].value === "wild" || discardPile[0].value === "+4wild"){
 		$('#wildCardModal').modal('show');
 		var button = $('#submit-button')
 		button.click(function(){
@@ -79,7 +79,7 @@ function createDiscardPile(){
 			discardCard.textContent= discardPile[0].value;
 			discardCard.style.backgroundColor = discardPile[0].color;
 			addPlayerHand();
-			if(discardPile[0].value === "+4Wild"){
+			if(discardPile[0].value === "+4wild"){
 				drawCard();
 				drawCard();
 				drawCard();

@@ -41,11 +41,11 @@ function playCard(){
 function checkCard(){
 	console.log("card is played");
 	didSomeoneWin();
-	if(weHaveAWinner === true){
+	if(weHaveAWinner === true || (weHaveAWinner === false && shuffledDeck.length === 0)){
 		console.log("uno uno uno!");
 		changeDiscard();
 	}else{
-		if(cardPlayed[0].color === discardPile[0].color || cardPlayed[0].value === discardPile[0].value && cardPlayed[0].value !== "wild" && cardPlayed[0].value !== "+4Wild"){
+		if(cardPlayed[0].color === discardPile[0].color || cardPlayed[0].value === discardPile[0].value && cardPlayed[0].value !== "wild" && cardPlayed[0].value !== "+4wild"){
 			console.log('card spliced', cardPlayed[0].color);
 			if(cardPlayed[0].value === "skip"){
 				skipCard();
@@ -66,7 +66,7 @@ function checkCard(){
 		}else if(cardPlayed[0].value === "wild"){
 			startPlayWildCard();
 			playerTurnIs();
-		}else if(cardPlayed[0].value === "+4Wild"){
+		}else if(cardPlayed[0].value === "+4wild"){
 			startPlayWildCardDrawFour();
 		}else{
 			console.log("try again");
@@ -77,6 +77,9 @@ function checkCard(){
 
 //draw logic
 function drawCard(){
+	if(shuffledDeck.length === 0){
+		didSomeoneWin();
+	}
 	console.log("player would like to draw a card");
 	var drawnCard = shuffledDeck.splice(0,1);
 	playerArr[turn].playerHand.push(drawnCard[0]);
@@ -100,20 +103,32 @@ function didSomeoneWin(){
 			console.log("uno");
 			weHaveAWinner = true;
 			someoneWon();
+		}else if(shuffledDeck.length === 0){
+			someoneWon();
 		}else{
-			console.log("still goin");
+			console.log("still playing");
 		}
 	}
 }
 
 function someoneWon(){
-	$('#winnerIndex').text(currentPlayer.playerName);
-	$('#winnerModal').modal('show');
-	var button = $('#new-game-button');
-	button.click(function(){
-		$('#winnerModal').modal('hide');
-		reset();
-	});
+	if(weHaveAWinner === false){
+		$('#winnerIndex').text("Uhoh, you played through the whole deck! Would you like to play again?");
+		$('#winnerModal').modal('show');
+		var button = $('#new-game-button');
+		button.click(function(){
+			$('#winnerModal').modal('hide');
+			reset();
+		});
+	}else if(weHaveAWinner === true){
+		$('#winnerIndex').text("UNO! "+currentPlayer.playerName+" won!");
+		$('#winnerModal').modal('show');
+		var button = $('#new-game-button');
+		button.click(function(){
+			$('#winnerModal').modal('hide');
+			reset();
+		});
+	}
 }
 
 function reset(){
