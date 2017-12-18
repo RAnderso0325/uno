@@ -115,30 +115,20 @@ function someoneWon(){
 	if(weHaveAWinner === false){
 		$('#winnerIndex').text("Uhoh, you played through the whole deck! Would you like to play again?");
 		$('#winnerModal').modal('show');
-		var button = $('#new-game-button');
-		button.click(function(){
-			$('#winnerModal').modal('hide');
-			reset();
-		});
 	}else if(weHaveAWinner === true){
 		$('#winnerIndex').text("UNO! "+currentPlayer.playerName+" won!");
 		$('#winnerModal').modal('show');
-		var button = $('#new-game-button');
-		button.click(function(){
-			$('#winnerModal').modal('hide');
-			reset();
-		});
 	}
+	var button = $('#new-game-button');
+	button.click(function(){
+		$('#winnerModal').modal('hide');
+		reset();
+	});
 }
 
-function reset(){
-	$('#game-board').empty();
-	playerArr=[];
-	reverse = false,
-	weHaveAWinner = false,
-	turn = 0;
-	currentPlayer = playerArr[0];
-	function modals(){
+function newGameModals(){
+	var buttonNewGame = $('#new-game');
+	buttonNewGame.click(function(){
 		$('#playerNumberModal').modal('show');
     	toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values
    		//this will call the toggleFields function every time the selection value of the player number field changes
@@ -155,5 +145,15 @@ function reset(){
 			$('#playerNameModal').modal('hide');
 			startGameModals();
 		})
-	}
+	});
+}
+
+function reset(){
+	newGameModals();
+	$('#game-board').empty();
+	playerArr=[];
+	reverse = false,
+	weHaveAWinner = false,
+	turn = 0;
+	currentPlayer = playerArr[0];
 }
