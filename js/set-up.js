@@ -3,7 +3,6 @@ function setGameBoard(){
 	console.log("game board is ready");
 	shuffleDeck();
 	dealCards();
-	// $('#player0').css('display', 'block');
 }
 
 //shuffle function
@@ -33,10 +32,8 @@ function dealCards(){
     	var hand = document.createElement('div');
     	hand.setAttribute('class', 'hand');
     	hand.id = "hand"+i;
-    	// hand.setAttribute('id', 'player'+i);
     	playerInPlay.style.display = "none";
     	document.getElementById('game-board').appendChild(playerInPlay).appendChild(hand);
-    	// playerHand();
     }
     discardPile = shuffledDeck.splice(0,1);
     createDiscardPile();
@@ -88,18 +85,15 @@ function createDiscardPile(){
 				drawCard();
 				drawCard();
 			}
-			$('#player0').css('display', 'block');
 		});
 	}else if(discardPile[0].value === "skip"){
 		$('#player0').css('display', 'none');
 		playerTurnIs();
 	}else if(discardPile[0].value === "reverse"){
 		reverse=true;
-		$('#player0').css('display', 'block');
 	}else if(discardPile[0].value === "plusTwo"){
 		drawCard();
 		drawCard();
-		$('#player0').css('display', 'block');
 	}
 }
 

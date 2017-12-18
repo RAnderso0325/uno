@@ -1,6 +1,5 @@
 //GAME PLAY:
 function playerTurnIs(){
-	//set all hand divs to display: none
 	$('.player').css('display', 'none');
 	if(reverse === false){
 		turn++;
@@ -16,7 +15,6 @@ function playerTurnIs(){
 		}
 		currentPlayer = playerArr[turn];
 		document.getElementById('player'+turn).style.display = "block";
-		console.log("we are in the turn false function playing with turn", turn);
 	}
 	console.log("current turn is",playerArr[turn]);
 }
@@ -31,7 +29,6 @@ function changeDiscard(){
 	discardCard.textContent= discardPile[0].value;
 	discardCard.style.backgroundColor = discardPile[0].color;
 	addPlayerHand();
-	// playerTurnIs();
 }
 
 //card has been played
@@ -70,7 +67,6 @@ function checkCard(){
 			startPlayWildCard();
 			playerTurnIs();
 		}else if(cardPlayed[0].value === "+4WildCard"){
-			// changeDiscard();
 			startPlayWildCardDrawFour();
 		}else{
 			console.log("try again");
@@ -95,7 +91,6 @@ function drawCard(){
 	card.style.backgroundColor = drawnCard[0].color;
 	card.addEventListener('click', playCard);
 	$('#hand'+turn).append(card);
-	//add card to player hand
 }
 
 function didSomeoneWin(){

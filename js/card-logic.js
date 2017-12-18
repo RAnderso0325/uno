@@ -50,5 +50,4 @@ function playWildCardDrawFour(){
 	drawCard();
 	drawCard();
 	drawCard();
-	console.log("user played a wild card draw four");
 }
