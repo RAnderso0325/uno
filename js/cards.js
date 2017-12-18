@@ -101,19 +101,19 @@ var deck = [
 },
 {
 	color: "#7A1BFF",
-	value: "wildCard",
+	value: "wild",
 },
 {
 	color: "#7A1BFF",
-	value: "wildCard",
+	value: "wild",
 },
 {
 	color: "#7A1BFF",
-	value: "+4WildCard",
+	value: "+4wild",
 },
 {
 	color: "#7A1BFF",
-	value: "+4WildCard",
+	value: "+4wild",
 },
 {
 	color: "#FFC70A",
@@ -217,19 +217,19 @@ var deck = [
 },
 {
 	color: "#7A1BFF",
-	value: "wildCard",
+	value: "wild",
 },
 {
 	color: "#7A1BFF",
-	value: "wildCard",
+	value: "wild",
 },
 {
 	color: "#7A1BFF",
-	value: "+4WildCard",
+	value: "+4wild",
 },
 {
 	color: "#7A1BFF",
-	value: "+4WildCard",
+	value: "+4wild",
 },
 {
 	color: "#0CE802",
@@ -333,19 +333,19 @@ var deck = [
 },
 {
 	color: "#7A1BFF",
-	value: "wildCard",
+	value: "wild",
 },
 {
 	color: "#7A1BFF",
-	value: "wildCard",
+	value: "wild",
 },
 {
 	color: "#7A1BFF",
-	value: "+4WildCard",
+	value: "+4wild",
 },
 {
 	color: "#7A1BFF",
-	value: "+4WildCard",
+	value: "+4wild",
 },
 {
 	color: "#1AAEFF",
@@ -449,18 +449,18 @@ var deck = [
 },
 {
 	color: "#7A1BFF",
-	value: "wildCard",
+	value: "wild",
 },
 {
 	color: "#7A1BFF",
-	value: "wildCard",
+	value: "wild",
 },
 {
 	color: "#7A1BFF",
-	value: "+4WildCard",
+	value: "+4wild",
 },
 {
 	color: "#7A1BFF",
-	value: "+4WildCard",
+	value: "+4wild",
 }
 ]

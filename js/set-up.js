@@ -26,7 +26,7 @@ function dealCards(){
     	playerInPlay.setAttribute('id', 'player'+i);
     	playerInPlay.setAttribute('class', 'player');
     	var playerTitle = document.createElement('h2');
-    	playerTitle.textContent = "Player "+playerArr[i].playerName;
+    	playerTitle.textContent = "Player "+playerArr[i].playerName+"'s turn!";
     	playerInPlay.appendChild(playerTitle);
     	playerArr[i].playerHand = shuffledDeck.splice(0,7);
     	var hand = document.createElement('div');
@@ -66,7 +66,7 @@ function createDiscardPile(){
 	discardCard.textContent=discardPile[0].value;
 	discardCard.style.backgroundColor = discardPile[0].color;
 	$('#player0').css('display', 'block');
-	if(discardPile[0].value === "wildCard" || discardPile[0].value === "+4WildCard"){
+	if(discardPile[0].value === "wild" || discardPile[0].value === "+4Wild"){
 		$('#wildCardModal').modal('show');
 		var button = $('#submit-button')
 		button.click(function(){
@@ -79,7 +79,7 @@ function createDiscardPile(){
 			discardCard.textContent= discardPile[0].value;
 			discardCard.style.backgroundColor = discardPile[0].color;
 			addPlayerHand();
-			if(discardPile[0].value === "+4WildCard"){
+			if(discardPile[0].value === "+4Wild"){
 				drawCard();
 				drawCard();
 				drawCard();
@@ -108,9 +108,12 @@ function toggleFields(){
 
 function addPlayerNameFields(){
 	var numberPlayers = $("#number-of-players").val();
-	for(var i=0; i < numberPlayers-3; i++){
-		$('#more-players').append($('<p></p>').text('Player Name: ').append($('<input type="text" name="player_name" class="name-of-players" value="">')));
-		console.log($(".name-of-players"));
+	if(numberPlayers >= 3){
+		$('#more-players').empty();
+		for(var i=0; i < numberPlayers-2; i++){
+			$('#more-players').append($('<p></p>').text('Player Name: ').append($('<input type="text" name="player_name" class="name-of-players" value="">')));
+			console.log($(".name-of-players"));
+		}
 	}
 }
 
