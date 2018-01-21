@@ -1,157 +1,157 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>UNO!</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNO!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
+
 <body>
-<div class="row">
-	<div class="col-sm-12"><h1>UNO</h1>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Brand</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#uno-nav-bar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="uno-nav-bar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="game.html">Play Uno!
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rules of the Game
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Set Up</a>
+                                <p>
+                                    Each player is dealt 7 cards at the start of the game. To initialize players, either press the new game button or press "Play
+                                    Uno!" in the navigation.
+                                </p>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#">Game Play</a>
+                                <p>There are four color suits, red, yellow, green, and blue. For each color suit, there are
+                                    10 number cards, 0-9, in addition to reverse, skip, and draw two cards.
+                                    <br> During each player's turn, they must play a card, by clicking on it, that matches either
+                                    the color suit or the value, numeric or action, of the card on the top of the discard
+                                    pile. If they do not have a card that matches, or a wild card, they must draw a card
+                                    by clicking the Draw Card button.
+                                </p>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>To win, Be the first player to have an empty hand!</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Card-Specific Functionality
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Wild Cards</a>
+                                <p>Wild cards allow the player to choose a color suit and can be played on any card. Wild card
+                                    draw fours also force the next player to draw four cards.</p>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#">Skip Card</a>
+                                <p>When played, skip cards skip the next player's turn.</p>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#">Draw Card</a>
+                                <p>When played, draw cards force the next player to draw two cards.</p>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#">Reverse Card</a>
+                                <p>When played, reverse cards revese the order of play, returning to the previous player.</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>UNO!</h1>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4>Set-Up:</h4>
+                    <p>On the next screen, you'll select a number of players and enter player names.
+                        <br> Once the game begins, each player will be dealt seven cards and a final card will be added to the
+                        discard pile.
+                        <br> The object of the game is to be the first player to have an empty hand.
+                    </p>
+                    <h4>Game Play:</h4>
+                    <p>There are four color suits, red, yellow, green, and blue. For each color suit, there are 10 number cards,
+                        0-9, in addition to two reverse cards, skip cards, and draw two cards.
+                        <br> During each player's turn, they must play a card, by clicking on it, that matches either the color
+                        suit or the value, numeric or action, of the card on the top of the discard pile. If they do not
+                        have a card that matches, or a wild card, they must draw a card by clicking the Draw Card button.
+                    </p>
+                    <h5>Wild Card</h5>
+                    <p>Wild Cards, and Wild Card Draw Fours, allow the player to choose what color suit they would like to change
+                        the discard card to. These cards are usually used when the player does not have a card of the current
+                        color suit. Wild Card Draw Fours have the additional functionality of forcing the next player to
+                        draw four cards.
+                    </p>
+                    <h5>Action Cards</h5>
+                    <p>
+                        <strong>Reverse Cards:</strong> when this card is played, the order of play will reverse, making it the previous
+                        player's turn. This new order will continue until another reverse card is played.
+                        <br>
+                        <strong>Skip Cards:</strong> when this card is played, the game will skip over the next player's turn.
+                        <br>
+                        <strong>Draw Two Cards:</strong> when this card is played, it will force the next player to draw two cards.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-	<div class="col-sm-12">
-		<h2>Discard Pile</h2>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-12">
-		<div id="discardCard" class="card"></div>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-12" id="game-board"></div>
-</div>
-<div class="row">
-	<div class="col-sm-12">
-		<button type="add" class="btn btn-info" id="draw-card">Draw Card</button>
-		<button type="button" class="btn btn-success" id="new-game" data-toggle="modal" data-target="#playerNumberModal">New Game</button>
-	</div>
-</div>
-
-<div class="modal" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-    		<div class="modal-header">
-      			<h4 class="modal-title" id="myModalLabel">How to play UNO!</h4>
-      		</div>
-      		<div class="modal-body">
-      			<h4>Set-Up:</h4>
-      				<p>On the next screen, you'll select a number of players and enter player names.<br>Once the game begins, each player will be dealt seven cards and a final card will be added to the discard pile.<br>The object of the game is to be the first player to have an empty hand.</p>
-      			<h4>Game Play:</h4>
-      				<p>There are four color suits, red, yellow, green, and blue. For each color suit, there are 10 number cards, 0-9, in addition to two reverse cards, skip cards, and draw two cards.<br>During each player's turn, they must play a card, by clicking on it, that matches either the color suit or the value, numeric or action, of the card on the top of the discard pile. If they do not have a card that matches, or a wild card, they must draw a card by clicking the Draw Card button.</p>
-      				<h5>Wild Card</h5>
-      					<p>Wild Cards, and Wild Card Draw Fours, allow the player to choose what color suit they would like to change the discard card to. These cards are usually used when the player does not have a card of the current color suit. Wild Card Draw Fours have the additional functionality of forcing the next player to draw four cards.</p>
-      				<h5>Action Cards</h5>
-      					<p><strong>Reverse Cards:</strong> when this card is played, the order of play will reverse, making it the previous player's turn. This new order will continue until another reverse card is played.<br><strong>Skip Cards:</strong> when this card is played, the game will skip over the next player's turn.<br><strong>Draw Two Cards:</strong> when this card is played, it will force the next player to draw two cards.</p>
-			</div>
-			<div class="modal-footer">
-				<span><strong>Ready to Play? </strong>
-				<input type="submit" class="btn btn-info" value="Not Ready" data-dismiss="modal" id="button-video">
-				<input type="submit" class="btn btn-success" data-dismiss="modal" id="name-button" value="Enter Player Names">
-				</span>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="modal" id="playerNumberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-    		<div class="modal-header">
-      			<h4 class="modal-title" id="myModalLabel">How many players would like to play?</h4>
-      		</div>
-      		<div class="modal-body">
-				<form>
-    				<p>Number of Players:
-        				<select id="number-of-players" name="Number of Players:">
-            				<option value="2">2</option>
-            				<option value="3">3</option>
-            				<option value="4">4</option>
-            				<option value="5">5</option>
-            				<option value="6">6</option>
-            				<option value="7">7</option>
-            				<option value="8">8</option>
-            				<option value="9">9</option>
-            				<option value="10">10</option>
-            				<option value="11">11</option>
-            				<option value="12">12</option>
-        				</select>
-    				</p>
-    				<p>Player Name:
-        				<input type="text" name="player_name" class="name-of-players" value="">
-    				</p>Player Name:
-    					<input type="text" name="player_name" class="name-of-players" value="">
-    				</p>
-    				<div id="more-players"></div>
-    			</form>
-			</div>
-			<div class="modal-footer">
-				<input type="button" class="btn btn-info" id="back-button" data-dismiss="modal" value="Back to Instructions">
-				<input type="submit" class="btn btn-success" data-dismiss="modal" id="start-button" value="Start Playing!">
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="modal" id="wildCardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-    		<div class="modal-header">
-      			<h4 class="modal-title" id="myModalLabel">Choose a color category!</h4>
-      		</div>
-      		<div class="modal-body">
-				<div class="form-check form-check-inline">
-  					<label class="form-check-label">
-    					<input class="form-check-input" type="radio" name="option" id="option-red" value="#E82002" required="required"> Red
-  					</label>
-				</div>
-				<div class="form-check form-check-inline">
-  					<label class="form-check-label">
-    					<input class="form-check-input" type="radio" name="option" id="option-yellow" value="#FFC70A" required="required"> Yellow
-  					</label>
-				</div>
-				<div class="form-check form-check-inline">
-  					<label class="form-check-label">
-   						<input class="form-check-input" type="radio" name="option" id="option-green" value="#0CE802" required="required"> Green
-  					</label>
-				</div>
-				<div class="form-check form-check-inline">
-  					<label class="form-check-label">
-   						<input class="form-check-input" type="radio" name="option" id="option-blue" value="#1AAEFF" required="required"> Blue
-  					</label>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<input type="submit" class="btn btn-success" data-dismiss="modal" id="submit-button">
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="modal" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-body">
-				<h2><span id="winnerIndex"></span></h2>
-			</div>
-			<div class="modal-footer">
-				<input type="submit" class="btn btn-info" data-dismiss="modal" id="new-game-button" data-target="#playerNumberModal" data-value="Play Again">
-			</div>
-		</div>
-	</div>
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="./js/players.js"></script>
-<script type="text/javascript" src="./js/variables.js"></script>
-<script type="text/javascript" src="./js/cards.js"></script>
-<script type="text/javascript" src="./js/set-up.js"></script>
-<script type="text/javascript" src="./js/card-logic.js"></script>
-<script type="text/javascript" src="./js/app.js"></script>
-</body>
-</html>
+<footer>
+    <div class="row">
+        <ul>
+            <li>developed by: reilly anderson</li>
+            <li>fork me on github</li>
+        </ul>
+    </div>
+</footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/players.js"></script>
+    <script type="text/javascript" src="./js/variables.js"></script>
+    <script type="text/javascript" src="./js/cards.js"></script>
+    <script type="text/javascript" src="./js/set-up.js"></script>
+    <script type="text/javascript" src="./js/card-logic.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    </body>
+    
+    </html>
