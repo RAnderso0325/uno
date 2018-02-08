@@ -1,6 +1,5 @@
 //set up game board
 function setGameBoard(){
-	console.log("game board is ready");
 	shuffleDeck();
 	dealCards();
 }
@@ -14,13 +13,12 @@ function shuffleDeck(){
 		temporaryValue = deck[currentIndex];
 		deck[currentIndex]= deck[randomIndex];
 		deck[randomIndex] = temporaryValue;
-		shuffledDeck = deck;
+		shuffledDeck = deck.slice();
 	}
 }
 
 //create player hand
 function dealCards(){
-	console.log("player hand dealt");
     for(var i=0; i<playerArr.length; i++){
     	var playerInPlay = document.createElement('div');
     	playerInPlay.setAttribute('id', 'player'+i);
@@ -125,47 +123,20 @@ function setPlayerArr(){
 }
 
 function startGameModals(){
-	$('#instructionsModal').modal('show');
-	var buttonVideo = $("#button-video");
-	buttonVideo.click(function(){
-		window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-		$('#instructionsModal').modal('hide');
-		$('#playerNumberModal').modal('show');
-    	toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values
-   		//this will call the toggleFields function every time the selection value of the player number field changes
+	var buttonInitialize = $("#initial-game");
+	buttonInitialize.click(function(){
+		document.getElementById('pre-game-fill').classList.add("hidden");
+		toggleFields();
+		$("#number-of-players").modal('show');
     	$("#number-of-players").change(function() { 
     		toggleFields(); 
-    	}); //this toggles the visibility of the additional name fields depending on the current selected value of the number field
+    	});
 		var buttonStart = $('#start-button');
 		buttonStart.click(function(){
 			setPlayerArr();
-			$('#playerNumberModal').modal('hide');
-		})
-		var buttonBack = $('#back-button');
-		buttonBack.click(function(){
-			$('#playerNameModal').modal('hide');
-			startGameModals();
-		})
-	})
-	var buttonNext = $('#name-button');
-	buttonNext.click(function(){
-		$('#instructionsModal').modal('hide');
-		$('#playerNumberModal').modal('show');
-    	toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values
-   		//this will call the toggleFields function every time the selection value of the player number field changes
-    	$("#number-of-players").change(function() { 
-    		toggleFields(); 
-    	}); //this toggles the visibility of the additional name fields depending on the current selected value of the number field
-		var buttonStart = $('#start-button');
-		buttonStart.click(function(){
-			setPlayerArr();
-			$('#playerNumberModal').modal('hide');
-		})
-		var buttonBack = $('#back-button');
-		buttonBack.click(function(){
-			$('#playerNameModal').modal('hide');
-			startGameModals();
-		})
+			$('#number-of-players').modal('hide');
+			document.getElementById('game-page').classList.remove('hidden');
+		});
 	});
 }
 

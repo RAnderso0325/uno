@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Brand</a>
+                <a class="navbar-brand" href="/">UNO!</a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#uno-nav-bar" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -30,11 +30,7 @@
             <div class="collapse navbar-collapse" id="uno-nav-bar">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="game.html">Play Uno!
-                        </a>
+                        <a href="#">UNO!</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rules of the Game
@@ -97,10 +93,10 @@
         <!-- /.container-fluid -->
     </nav>
 <div class="container">
-    <div class="row">
+    <div class="row" id="pre-game-fill">
         <div class="col-sm-12">
             <h1>UNO!</h1>
-            <div class="row">
+            <div class="row set-up-screen" data-target="">
                 <div class="col-sm-12">
                     <h4>Set-Up:</h4>
                     <p>On the next screen, you'll select a number of players and enter player names.
@@ -131,12 +127,126 @@
                         <strong>Draw Two Cards:</strong> when this card is played, it will force the next player to draw two cards.
                     </p>
                 </div>
+                <button type="button" class="btn btn-success" id="initial-game" data-toggle="modal" data-target="#playerNumberModal">New Game</button>
             </div>
         </div>
     </div>
 </div>
 
-<footer>
+<div class="container">
+    <div class="row">
+        <div class="game-area hidden" id="game-page">
+            <div class="col-sm-12">
+                <h1>UNO</h1>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Discard Pile</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="discardCard" class="card"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" id="game-board"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="add" class="btn btn-info" id="draw-card">Draw Card</button>
+                    <button type="button" class="btn btn-success" id="new-game" data-toggle="modal" data-target="#playerNumberModal">New Game</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="playerNumberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">How many players would like to play?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <p>Number of Players:
+                                <select id="number-of-players" name="Number of Players:">
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </p>
+                            <p>Player Name:
+                                <input type="text" name="player_name" class="name-of-players" value="">
+                            </p>Player Name:
+                            <input type="text" name="player_name" class="name-of-players" value="">
+                            </p>
+                            <div id="more-players"></div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-success" data-dismiss="modal" id="start-button" value="Start Playing!">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="wildCardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Choose a color category!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="option" id="option-red" value="#E82002" required="required"> Red
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="option" id="option-yellow" value="#FFC70A" required="required"> Yellow
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="option" id="option-green" value="#0CE802" required="required"> Green
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="option" id="option-blue" value="#1AAEFF" required="required"> Blue
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-success" data-dismiss="modal" id="submit-button">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h2>
+                            <span id="winnerIndex"></span>
+                        </h2>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-info" data-dismiss="modal" id="new-game-button" data-target="#playerNumberModal" data-value="Play Again">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer-fixed-bottom">
     <div class="row">
         <ul>
             <li>developed by: reilly anderson</li>
@@ -144,14 +254,15 @@
         </ul>
     </div>
 </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="./js/players.js"></script>
-    <script type="text/javascript" src="./js/variables.js"></script>
-    <script type="text/javascript" src="./js/cards.js"></script>
-    <script type="text/javascript" src="./js/set-up.js"></script>
-    <script type="text/javascript" src="./js/card-logic.js"></script>
-    <script type="text/javascript" src="./js/app.js"></script>
-    </body>
-    
-    </html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/players.js"></script>
+<script type="text/javascript" src="./js/variables.js"></script>
+<script type="text/javascript" src="./js/cards.js"></script>
+<script type="text/javascript" src="./js/set-up.js"></script>
+<script type="text/javascript" src="./js/card-logic.js"></script>
+<script type="text/javascript" src="./js/app.js"></script>
+</body>
+
+</html>
