@@ -1,7 +1,6 @@
 //skip logic
 function skipCard(){
 	playerTurnIs();
-	console.log("skip card was played");
 }
 
 //reverse logic
@@ -9,17 +8,15 @@ function reverseCard(){
 	if(reverse === false){
 		reverse = true;
 	}else if(reverse === true){
-		console.log("inside the reverse is true condition", turn);
 		reverse = false;
 	};
-	console.log("reverse card was played");
 }
 
 //draw two logic
 function drawTwo(){
+	//change to take an input of number of times to call drawCard
 	drawCard();
 	drawCard();
-	console.log("player has to draw two");
 }
 
 //wild card logic
@@ -32,6 +29,7 @@ function startPlayWildCard(){
 	});
 }
 
+//combine wild card functions with an if else statement
 function playWildCard(){
 	var userSelection = $('input[name="option"]:checked');
 	cardPlayed[0].color = userSelection[0].value;

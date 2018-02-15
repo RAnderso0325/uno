@@ -16,7 +16,6 @@ function playerTurnIs(){
 		currentPlayer = playerArr[turn];
 		document.getElementById('player'+turn).style.display = "block";
 	}
-	console.log("current turn is",playerArr[turn]);
 }
 
 //change discard card
@@ -39,14 +38,11 @@ function playCard(){
 
 //card must match either color or value to be played
 function checkCard(){
-	console.log("card is played");
 	didSomeoneWin();
 	if(weHaveAWinner === true || (weHaveAWinner === false && shuffledDeck.length === 0)){
-		console.log("uno uno uno!");
 		changeDiscard();
 	}else{
 		if(cardPlayed[0].color === discardPile[0].color || cardPlayed[0].value === discardPile[0].value && cardPlayed[0].value !== "wild" && cardPlayed[0].value !== "+4wild"){
-			console.log('card spliced', cardPlayed[0].color);
 			if(cardPlayed[0].value === "skip"){
 				skipCard();
 				changeDiscard();
@@ -69,7 +65,6 @@ function checkCard(){
 		}else if(cardPlayed[0].value === "+4wild"){
 			startPlayWildCardDrawFour();
 		}else{
-			console.log("try again");
 			playerArr[turn].playerHand.push(cardPlayed[0]);
 		}
 	}
@@ -80,12 +75,8 @@ function drawCard(){
 	if(shuffledDeck.length === 0){
 		didSomeoneWin();
 	}
-	console.log("player would like to draw a card");
 	var drawnCard = shuffledDeck.splice(0,1);
 	playerArr[turn].playerHand.push(drawnCard[0]);
-	console.log(playerArr[turn]);
-	console.log(turn);
-	console.log(playerArr[turn].playerHand);
 	var card = document.createElement('div');
 	card.setAttribute('class', 'card');
 	card.classList.add(drawnCard[0].color);
@@ -100,13 +91,10 @@ function didSomeoneWin(){
 	for(var i=0; i<playerArr.length; i++){
 		var playerHand = playerArr[i].playerHand;
 		if(playerHand.length === 0){
-			console.log("uno");
 			weHaveAWinner = true;
 			someoneWon();
 		}else if(shuffledDeck.length === 0){
 			someoneWon();
-		}else{
-			console.log("still playing");
 		}
 	}
 }
@@ -116,6 +104,7 @@ function someoneWon(){
 		$('#winnerIndex').text("Uhoh, you played through the whole deck! Would you like to play again?");
 		$('#winnerModal').modal('show');
 	}else if(weHaveAWinner === true){
+		document.getElementById('game-page').classList.add('hidden');
 		$('#winnerIndex').text("UNO! "+currentPlayer.playerName+" won!");
 		$('#winnerModal').modal('show');
 	}
@@ -139,21 +128,16 @@ function newGameModals(){
 		buttonStart.click(function(){
 			setPlayerArr();
 			$('#playerNumberModal').modal('hide');
-		})
-		var buttonBack = $('#back-button');
-		buttonBack.click(function(){
-			$('#playerNameModal').modal('hide');
-			startGameModals();
-		})
+		});
 	});
 }
 
 function reset(){
-	newGameModals();
 	$('#game-board').empty();
 	playerArr=[];
 	reverse = false,
 	weHaveAWinner = false,
 	turn = 0;
 	currentPlayer = playerArr[0];
+	startGameModals();
 }

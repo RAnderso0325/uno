@@ -26,11 +26,18 @@ h2{
 	color: white;
 	text-shadow: -2px 2px 2px black;
 }
-
 .hidden{
 	visibility: hidden;
 }
-
-.show{
-	visibility: visible;
+.navbar-p{
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+.footer-fixed-bottom{
+	bottom: 0 !important;
+	position: fixed !important;
+}
+footer li {
+	list-style: none;
+	display: inline-block;
 }
