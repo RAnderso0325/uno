@@ -46,7 +46,7 @@ a.navbar-brand, li.navbar-nav, a.dropdown-toggle, .dropdown-menu{
 }
 .footer-fixed-bottom{
 	bottom: 0 !important;
-	position: absolute !important;
+	position: fixed !important;
 	margin-left: 20px !important;
 }
 .footer-text{
