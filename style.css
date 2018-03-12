@@ -44,5 +44,8 @@ h2{
 footer li {
 	list-style: none;
 	display: inline-block;
-	padding: 
+	padding: 10px;
+	text-align: center;
+	bottom: 0;
+	position: absolute;
 }
