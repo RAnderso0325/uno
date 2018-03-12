@@ -13,7 +13,7 @@ h1{
 h2{
 	color: rgb(35,194,225);
 }
-.mynav{
+#mynav{
 	background-color: rgb(35,194,225) !important;
 	color: white !important;
 }
@@ -40,12 +40,9 @@ h2{
 .footer-fixed-bottom{
 	bottom: 0 !important;
 	position: absolute !important;
+}
+.footer-text{
 	text-align: center !important;
 	color: rgb(35,194,225) !important;
-}
-footer li {
-	list-style: none;
-	display: inline-block;
 	padding: 10px;
-	text-align: center;
 }
