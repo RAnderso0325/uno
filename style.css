@@ -13,6 +13,10 @@ h1{
 h2{
 	color: rgb(35,194,225);
 }
+.navbar{
+	background-color: rgb(35,194,225) !important;
+	color: white !important;
+}
 .card, .discard{
 	display: inline-block;
 	border: 2px solid black;
@@ -40,4 +44,5 @@ h2{
 footer li {
 	list-style: none;
 	display: inline-block;
+	padding: 
 }
