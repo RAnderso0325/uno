@@ -42,6 +42,7 @@ a.navbar-brand, li.navbar-nav, a.dropdown-toggle, .dropdown-menu{
 .navbar-p{
 	padding-left: 10px !important;
 	padding-right: 10px !important;
+	color: darkblue !important;
 }
 .footer-fixed-bottom{
 	bottom: 0 !important;
