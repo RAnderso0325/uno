@@ -17,6 +17,9 @@ h2{
 	background-color: rgb(35,194,225) !important;
 	color: white !important;
 }
+.navbar-brand, .navbar-nav li, .dropdown a, .dropdown-menu{
+	color: white !important;
+}
 .card, .discard{
 	display: inline-block;
 	border: 2px solid black;
@@ -40,6 +43,7 @@ h2{
 .footer-fixed-bottom{
 	bottom: 0 !important;
 	position: absolute !important;
+	margin-left: 20px;
 }
 .footer-text{
 	text-align: center !important;
