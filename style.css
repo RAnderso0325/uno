@@ -17,6 +17,9 @@ h2{
 	background-color: rgb(35,194,225) !important;
 	color: white !important;
 }
+.open{
+	color: darkblue !important;
+}
 a.navbar-brand, li.navbar-nav, a.dropdown-toggle, .dropdown-menu{
 	color: white !important;
 }
