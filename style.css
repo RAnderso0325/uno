@@ -13,11 +13,11 @@ h1{
 h2{
 	color: rgb(35,194,225);
 }
-#mynav{
+#mynav, #uno-nav-bar{
 	background-color: rgb(35,194,225) !important;
 	color: white !important;
 }
-a.navbar-brand, li.navbar-nav, a.dropdowntoggle, .dropdown-menu{
+a.navbar-brand, li.navbar-nav, a.dropdown-toggle, .dropdown-menu{
 	color: white !important;
 }
 .card, .discard{
