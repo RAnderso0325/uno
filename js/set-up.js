@@ -79,9 +79,6 @@ function createDiscardPile(){
 			addPlayerHand();
 			if(discardPile[0].value === "+4wild"){
 				drawCard(4);
-				// drawCard();
-				// drawCard();
-				// drawCard();
 			}
 		});
 	}else if(discardPile[0].value === "skip"){
@@ -91,7 +88,6 @@ function createDiscardPile(){
 		reverse=true;
 	}else if(discardPile[0].value === "plusTwo"){
 		drawCard(2);
-		// drawCard();
 	}
 }
 
@@ -110,7 +106,6 @@ function addPlayerNameFields(){
 		$('#more-players').empty();
 		for(var i=0; i < numberPlayers-2; i++){
 			$('#more-players').append($('<p></p>').text('Player Name: ').append($('<input type="text" name="player_name" class="name-of-players" value="">')));
-			console.log($(".name-of-players"));
 		}
 	}
 }
