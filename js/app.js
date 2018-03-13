@@ -36,6 +36,12 @@ function playCard(){
 	checkCard();
 }
 
+//move forward with game
+function nextTurn(){
+	changeDiscard();
+	playerTurnIs();
+}
+
 //card must match either color or value to be played
 function checkCard(){
 	didSomeoneWin();
@@ -44,26 +50,22 @@ function checkCard(){
 	}else{
 		if(cardPlayed[0].color === discardPile[0].color || cardPlayed[0].value === discardPile[0].value && cardPlayed[0].value !== "wild" && cardPlayed[0].value !== "+4wild"){
 			if(cardPlayed[0].value === "skip"){
-				skipCard();
-				changeDiscard();
 				playerTurnIs();
+				nextTurn();
 			}else if(cardPlayed[0].value === "reverse"){
 				reverseCard();
-				changeDiscard();
-				playerTurnIs();
+				nextTurn();
 			}else if(cardPlayed[0].value === "plusTwo"){
-				changeDiscard();
-				playerTurnIs();
-				drawTwo();
+				nextTurn();
+				drawCard(2);
 			}else{
-				changeDiscard();
-				playerTurnIs();
+				nextTurn();
 			};
 		}else if(cardPlayed[0].value === "wild"){
 			startPlayWildCard();
-			playerTurnIs();
 		}else if(cardPlayed[0].value === "+4wild"){
-			startPlayWildCardDrawFour();
+			startPlayWildCard();
+			drawCard(4);
 		}else{
 			playerArr[turn].playerHand.push(cardPlayed[0]);
 		}
@@ -71,7 +73,7 @@ function checkCard(){
 }
 
 //draw logic
-function drawCard(){
+function drawCard(num){
 	if(shuffledDeck.length === 0){
 		didSomeoneWin();
 	}
@@ -85,6 +87,9 @@ function drawCard(){
 	card.style.backgroundColor = drawnCard[0].color;
 	card.addEventListener('click', playCard);
 	$('#hand'+turn).append(card);
+	if(num>1){
+		drawCard(num-1);
+	}
 }
 
 function didSomeoneWin(){
@@ -136,6 +141,9 @@ function reset(){
 	$('#game-board').empty();
 	playerArr=[];
 	reverse = false,
+	shuffledDeck=[];
+	discardPile=[];
+	cardPlayed;
 	weHaveAWinner = false,
 	turn = 0;
 	currentPlayer = playerArr[0];

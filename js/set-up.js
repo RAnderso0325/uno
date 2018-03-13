@@ -78,10 +78,10 @@ function createDiscardPile(){
 			discardCard.style.backgroundColor = discardPile[0].color;
 			addPlayerHand();
 			if(discardPile[0].value === "+4wild"){
-				drawCard();
-				drawCard();
-				drawCard();
-				drawCard();
+				drawCard(4);
+				// drawCard();
+				// drawCard();
+				// drawCard();
 			}
 		});
 	}else if(discardPile[0].value === "skip"){
@@ -90,8 +90,8 @@ function createDiscardPile(){
 	}else if(discardPile[0].value === "reverse"){
 		reverse=true;
 	}else if(discardPile[0].value === "plusTwo"){
-		drawCard();
-		drawCard();
+		drawCard(2);
+		// drawCard();
 	}
 }
 

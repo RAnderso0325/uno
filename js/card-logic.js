@@ -1,7 +1,9 @@
 //skip logic
-function skipCard(){
-	playerTurnIs();
-}
+// function skipCard(){
+// 	playerTurnIs();
+// 	changeDiscard();
+// 	playerTurnIs();
+// }
 
 //reverse logic
 function reverseCard(){
@@ -13,11 +15,10 @@ function reverseCard(){
 }
 
 //draw two logic
-function drawTwo(){
-	//change to take an input of number of times to call drawCard
-	drawCard();
-	drawCard();
-}
+// function drawTwo(){
+// 	//change to take an input of number of times to call drawCard
+// 	drawCard(2);
+// }
 
 //wild card logic
 function startPlayWildCard(){
@@ -33,19 +34,19 @@ function startPlayWildCard(){
 function playWildCard(){
 	var userSelection = $('input[name="option"]:checked');
 	cardPlayed[0].color = userSelection[0].value;
-	changeDiscard();
+	nextTurn();
 }
 
-//wild card draw four logic
-function startPlayWildCardDrawFour(){
-	startPlayWildCard();
-	playerTurnIs();
-	playWildCardDrawFour();
-}
+// //wild card draw four logic
+// function startPlayWildCardDrawFour(){
+// 	startPlayWildCard();
+// 	playerTurnIs();
+// 	playWildCardDrawFour();
+// }
 
-function playWildCardDrawFour(){
-	drawCard();
-	drawCard();
-	drawCard();
-	drawCard();
-}
+// function playWildCardDrawFour(){
+// 	drawCard(4);
+// 	// drawCard();
+// 	// drawCard();
+// 	// drawCard();
+// }
