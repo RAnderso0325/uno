@@ -44,13 +44,14 @@ a.navbar-brand, li.navbar-nav, a.dropdown-toggle, .dropdown-menu{
 	padding-right: 10px !important;
 	color: darkblue !important;
 }
-.footer-fixed-bottom{
-	bottom: 0 !important;
-	position: fixed !important;
-	margin-left: 20px !important;
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 40px;
+  text-align: left;
 }
 .footer-text{
-	text-align: center !important;
 	color: rgb(35,194,225) !important;
 	padding: 10px;
 }
